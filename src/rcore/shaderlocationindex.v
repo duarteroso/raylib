@@ -1,0 +1,33 @@
+module rcore
+
+enum ShaderLocationIndex {
+	shader_loc_vertex_position   = 0
+	shader_loc_vertex_texcoord01
+	shader_loc_vertex_texcoord02
+	shader_loc_vertex_normal
+	shader_loc_vertex_tangent
+	shader_loc_vertex_color
+	shader_loc_matrix_mvp
+	shader_loc_matrix_view
+	shader_loc_matrix_projection
+	shader_loc_matrix_model
+	shader_loc_matrix_normal
+	shader_loc_vector_view
+	shader_loc_color_diffuse
+	shader_loc_color_specular
+	shader_loc_color_ambient
+	shader_loc_map_albedo
+	shader_loc_map_metalness
+	shader_loc_map_normal
+	shader_loc_map_roughness
+	shader_loc_map_occlusion
+	shader_loc_map_emission
+	shader_loc_map_height
+	shader_loc_map_cubemap
+	shader_loc_map_irradiance
+	shader_loc_map_prefilter
+	shader_loc_map_brdf
+}
+
+const shader_loc_map_diffuse = ShaderLocationIndex.shader_loc_map_albedo
+const shader_loc_map_specular = ShaderLocationIndex.shader_loc_map_metalness

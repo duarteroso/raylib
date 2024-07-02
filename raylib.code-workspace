@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/usr/local/opt/raylib/include"
+		}
+	],
+	"settings": {}
+}
