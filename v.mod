@@ -1,7 +1,7 @@
 Module {
 	name: 'raylib'
-	description: 'raylib'
-	version: '0.0.1'
+	description: 'raylib bindings'
+	version: '2024.10.0'
 	license: 'MIT'
 	dependencies: []
 }
