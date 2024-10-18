@@ -1,2 +1,2 @@
 # raylib
-Raylib wrapper in V
+Raylib bindings in V
