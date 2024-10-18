@@ -1,80 +1,80 @@
 module raylib
 
-const raylib_version_major = 5
-const raylib_version_minor = 0
-const raylib_version_patch = 0
-const raylib_version = '5.0'
+pub const raylib_version_major = 5
+pub const raylib_version_minor = 0
+pub const raylib_version_patch = 0
+pub const raylib_version = '5.0'
 
 //----------------------------------------------------------------------------------
 // Some basic Defines
 //----------------------------------------------------------------------------------
-const pi = 3.14159265358979323846
-const deg2grad = pi / 180.0
-const rad2deg = 180.0 / pi
+pub const pi = 3.14159265358979323846
+pub const deg2grad = pi / 180.0
+pub const rad2deg = 180.0 / pi
 
 // Some Basic Colors
 // NOTE: Custom raylib color palette for amazing visuals on WHITE background
 
 // Light Gray
-const lightgray = Color{200, 200, 200, 255}
+pub const lightgray = Color{200, 200, 200, 255}
 // Gray
-const gray = Color{130, 130, 130, 255}
+pub const gray = Color{130, 130, 130, 255}
 // Dark Gray
-const darkgray = Color{80, 80, 80, 255}
+pub const darkgray = Color{80, 80, 80, 255}
 // Yellow
-const yellow = Color{253, 249, 0, 255}
+pub const yellow = Color{253, 249, 0, 255}
 // Gold
-const gold = Color{255, 203, 0, 255}
+pub const gold = Color{255, 203, 0, 255}
 // Orange
-const orange = Color{255, 161, 0, 255}
+pub const orange = Color{255, 161, 0, 255}
 // Pink
-const pink = Color{255, 109, 194, 255}
+pub const pink = Color{255, 109, 194, 255}
 // Red
-const red = Color{230, 41, 55, 255}
+pub const red = Color{230, 41, 55, 255}
 // Maroon
-const maroon = Color{190, 33, 55, 255}
+pub const maroon = Color{190, 33, 55, 255}
 // Green
-const green = Color{0, 228, 48, 255}
+pub const green = Color{0, 228, 48, 255}
 // Lime
-const lime = Color{0, 158, 47, 255}
+pub const lime = Color{0, 158, 47, 255}
 // Dark Green
-const darkgreen = Color{0, 117, 44, 255}
+pub const darkgreen = Color{0, 117, 44, 255}
 // Sky Blue
-const skyblue = Color{102, 191, 255, 255}
+pub const skyblue = Color{102, 191, 255, 255}
 // Blue
-const blue = Color{0, 121, 241, 255}
+pub const blue = Color{0, 121, 241, 255}
 // Dark Blue
-const darkblue = Color{0, 82, 172, 255}
+pub const darkblue = Color{0, 82, 172, 255}
 // Purple
-const purple = Color{200, 122, 255, 255}
+pub const purple = Color{200, 122, 255, 255}
 // Violet
-const violet = Color{135, 60, 190, 255}
+pub const violet = Color{135, 60, 190, 255}
 // Dark Purple
-const darkpurple = Color{112, 31, 126, 255}
+pub const darkpurple = Color{112, 31, 126, 255}
 // Beige
-const beige = Color{211, 176, 131, 255}
+pub const beige = Color{211, 176, 131, 255}
 // Brown
-const brown = Color{127, 106, 79, 255}
+pub const brown = Color{127, 106, 79, 255}
 // Dark Brown
-const darkbrown = Color{76, 63, 47, 255}
+pub const darkbrown = Color{76, 63, 47, 255}
 
 // White
-const white = Color{255, 255, 255, 255}
+pub const white = Color{255, 255, 255, 255}
 // Black
-const black = Color{0, 0, 0, 255}
+pub const black = Color{0, 0, 0, 255}
 // Blank (Transparent)
-const blank = Color{0, 0, 0, 0}
+pub const blank = Color{0, 0, 0, 0}
 // Magenta
-const magenta = Color{255, 0, 255, 255}
+pub const magenta = Color{255, 0, 255, 255}
 // My own White (raylib logo)
-const raywhite = Color{245, 245, 245, 255}
+pub const raywhite = Color{245, 245, 245, 255}
 
 //----------------------------------------------------------------------------------
 // Structures Definition
 //----------------------------------------------------------------------------------
 
 @[typedef]
-struct C.Vector2 {
+pub struct C.Vector2 {
 pub:
 	// Vector x component
 	x f32
@@ -83,10 +83,10 @@ pub:
 }
 
 // Vector2, 2 components
-type Vector2 = C.Vector2
+pub type Vector2 = C.Vector2
 
 @[typedef]
-struct C.Vector3 {
+pub struct C.Vector3 {
 pub:
 	// Vector x component
 	x f32
@@ -97,10 +97,10 @@ pub:
 }
 
 // Vector3, 3 components
-type Vector3 = C.Vector3
+pub type Vector3 = C.Vector3
 
 @[typedef]
-struct C.Vector4 {
+pub struct C.Vector4 {
 pub:
 	// Vector x component
 	x f32
@@ -113,13 +113,13 @@ pub:
 }
 
 // Vector4, 4 components
-type Vector4 = C.Vector4
+pub type Vector4 = C.Vector4
 
 // Quaternion, 4 components (Vector4 alias)
-type Quaternion = C.Vector4
+pub type Quaternion = C.Vector4
 
 @[typedef]
-struct C.Matrix {
+pub struct C.Matrix {
 pub:
 	// Matrix first row
 	m0 f32
@@ -159,10 +159,11 @@ pub:
 }
 
 // Matrix, 4x4 components, column major, OpenGL style, right-handed
-type Matrix = C.Matrix
+pub type Matrix = C.Matrix
 
 @[typedef]
-struct C.Color {
+pub struct C.Color {
+pub:
 	// Color red value
 	r u8
 	// Color green value
@@ -174,10 +175,11 @@ struct C.Color {
 }
 
 // Color, 4 components, R8G8B8A8 (32bit)
-type Color = C.Color
+pub type Color = C.Color
 
 @[typedef]
-struct C.Rectangle {
+pub struct C.Rectangle {
+pub:
 	// Rectangle top-left corner position x
 	x f32
 	// Rectangle top-left corner position y
@@ -189,10 +191,11 @@ struct C.Rectangle {
 }
 
 // Rectangle, 4 components
-type Rectangle = C.Rectangle
+pub type Rectangle = C.Rectangle
 
 @[typedef]
-struct C.Image {
+pub struct C.Image {
+pub:
 	// Image raw data
 	data voidptr
 	// Image base width
@@ -206,10 +209,11 @@ struct C.Image {
 }
 
 // Image, pixel data stored in CPU memory (RAM)
-type Image = C.Image
+pub type Image = C.Image
 
 @[typedef]
-struct C.Texture {
+pub struct C.Texture {
+pub:
 	// OpenGL texture id
 	id u32
 	// Texture base width
@@ -223,16 +227,17 @@ struct C.Texture {
 }
 
 // Texture, tex data stored in GPU memory (VRAM)
-type Texture = C.Texture
+pub type Texture = C.Texture
 
 // Texture2D, same as Texture
-type Texture2D = C.Texture
+pub type Texture2D = C.Texture
 
 // TextureCubemap, same as Texture
-type TextureCubemap = C.Texture
+pub type TextureCubemap = C.Texture
 
 @[typedef]
-struct C.RenderTexture {
+pub struct C.RenderTexture {
+pub:
 	// OpenGL framebuffer object id
 	id u32
 	// Color buffer attachment texture
@@ -242,13 +247,14 @@ struct C.RenderTexture {
 }
 
 // RenderTexture, fbo for texture rendering
-type RenderTexture = C.RenderTexture
+pub type RenderTexture = C.RenderTexture
 
 // RenderTexture2D, same as RenderTexture
-type RenderTexture2D = C.RenderTexture
+pub type RenderTexture2D = C.RenderTexture
 
 @[typedef]
-struct C.NPathInfo {
+pub struct C.NPatchInfo {
+pub:
 	// Texture source rectangle
 	source Rectangle
 	// Left border offset
@@ -264,10 +270,11 @@ struct C.NPathInfo {
 }
 
 // NPatchInfo, n-patch layout info
-type NPathInfo = C.NPathInfo
+pub type NPatchInfo = C.NPatchInfo
 
 @[typedef]
-struct C.GlyphInfo {
+pub struct C.GlyphInfo {
+pub:
 	// Character value (Unicode)
 	value int
 	// Character offset X when drawing
@@ -281,10 +288,11 @@ struct C.GlyphInfo {
 }
 
 // GlyphInfo, font characters glyphs info
-type GlyphInfo = C.GlyphInfo
+pub type GlyphInfo = C.GlyphInfo
 
 @[typedef]
-struct C.Font {
+pub struct C.Font {
+pub:
 	// Base size (default chars height)
 	baseSize int
 	// Number of glyph characters
@@ -300,10 +308,11 @@ struct C.Font {
 }
 
 // Font, font texture and GlyphInfo array data
-type Font = C.Font
+pub type Font = C.Font
 
 @[typedef]
-struct C.Camera3D {
+pub struct C.Camera3D {
+pub:
 	// Camera position
 	position Vector3
 	// Camera target it looks-at
@@ -317,13 +326,14 @@ struct C.Camera3D {
 }
 
 // Camera, defines position/orientation in 3d space
-type Camera3D = C.Camera3D
+pub type Camera3D = C.Camera3D
 
-// Camera type fallback, defaults to Camera3D
-type Camera = C.Camera3D
+// Camera pub type fallback, defaults to Camera3D
+pub type Camera = C.Camera3D
 
 @[typedef]
-struct C.Camera2D {
+pub struct C.Camera2D {
+pub:
 	// Camera offset (displacement from target)
 	offset Vector2
 	// Camera target (rotation and zoom origin)
@@ -335,10 +345,11 @@ struct C.Camera2D {
 }
 
 // Camera2D, defines position/orientation in 2d space
-type Camera2D = C.Camera2D
+pub type Camera2D = C.Camera2D
 
 @[typedef]
-struct C.Mesh {
+pub struct C.Mesh {
+pub:
 	// Number of vertices stored in arrays
 	vertexCount int
 	// Number of triangles stored (indexed or not)
@@ -375,10 +386,11 @@ struct C.Mesh {
 }
 
 // Mesh, vertex data and vao/vbo
-type Mesh = C.Mesh
+pub type Mesh = C.Mesh
 
 @[typedef]
-struct C.Shader {
+pub struct C.Shader {
+pub:
 	// Shader program id
 	id u32
 	// Shader locations array (RL_MAX_SHADER_LOCATIONS)
@@ -386,10 +398,11 @@ struct C.Shader {
 }
 
 // Shader
-type Shader = C.Shader
+pub type Shader = C.Shader
 
 @[typedef]
-struct C.MaterialMap {
+pub struct C.MaterialMap {
+pub:
 	// Material map texture
 	texture Texture2D
 	// Material map color
@@ -399,10 +412,11 @@ struct C.MaterialMap {
 }
 
 // MaterialMap
-type MaterialMap = C.MaterialMap
+pub type MaterialMap = C.MaterialMap
 
 @[typedef]
-struct C.Material {
+pub struct C.Material {
+pub:
 	// Material shader
 	shader Shader
 	// Material maps array (MAX_MATERIAL_MAPS)
@@ -412,10 +426,11 @@ struct C.Material {
 }
 
 // Material, includes shader and maps
-type Material = C.Material
+pub type Material = C.Material
 
 @[typedef]
-struct C.Transform {
+pub struct C.Transform {
+pub:
 	// Translation
 	translation Vector3
 	// Rotation
@@ -425,10 +440,11 @@ struct C.Transform {
 }
 
 // Transform, vertex transformation data
-type Transform = C.Transform
+pub type Transform = C.Transform
 
 @[typedef]
-struct C.BoneInfo {
+pub struct C.BoneInfo {
+pub:
 	// Bone name
 	name &char
 	// Bone parent
@@ -436,10 +452,11 @@ struct C.BoneInfo {
 }
 
 // Bone, skeletal animation bone
-type BoneInfo = C.BoneInfo
+pub type BoneInfo = C.BoneInfo
 
 @[typedef]
-struct C.Model {
+pub struct C.Model {
+pub:
 	// Local transform matrix
 	transform Matrix
 	// Number of meshes
@@ -461,10 +478,11 @@ struct C.Model {
 }
 
 // Model, meshes, materials and animation data
-type Model = C.Model
+pub type Model = C.Model
 
 @[typedef]
-struct C.ModelAnimation {
+pub struct C.ModelAnimation {
+pub:
 	// Number of bones
 	boneCount int
 	// Number of animation frames
@@ -478,10 +496,11 @@ struct C.ModelAnimation {
 }
 
 // ModelAnimation
-type ModelAnimation = C.ModelAnimation
+pub type ModelAnimation = C.ModelAnimation
 
 @[typedef]
-struct C.Ray {
+pub struct C.Ray {
+pub:
 	// Ray position (origin)
 	position Vector3
 	// Ray direction
@@ -489,10 +508,11 @@ struct C.Ray {
 }
 
 // Ray, ray for raycasting
-type Ray = C.Ray
+pub type Ray = C.Ray
 
 @[typedef]
-struct C.RayCollision {
+pub struct C.RayCollision {
+pub:
 	// Did the ray hit something?
 	hit bool
 	// Distance to the nearest hit
@@ -504,10 +524,11 @@ struct C.RayCollision {
 }
 
 // RayCollision, ray hit information
-type RayCollision = C.RayCollision
+pub type RayCollision = C.RayCollision
 
 @[typedef]
-struct C.BoundingBox {
+pub struct C.BoundingBox {
+pub:
 	// Minimum vertex box-corner
 	min Vector3
 	// Maximum vertex box-corner
@@ -515,10 +536,11 @@ struct C.BoundingBox {
 }
 
 // BoundingBox
-type BoundingBox = C.BoundingBox
+pub type BoundingBox = C.BoundingBox
 
 @[typedef]
-struct C.Wave {
+pub struct C.Wave {
+pub:
 	// Total number of frames (considering channels)
 	frameCount u32
 	// Frequency (samples per second)
@@ -532,26 +554,27 @@ struct C.Wave {
 }
 
 // Wave, audio wave data
-type Wave = C.Wave
+pub type Wave = C.Wave
 
 @[typedef]
-struct C.rAudioBuffer {
+pub struct C.rAudioBuffer {
 }
 
 // Opaque structs declaration
 // NOTE: Actual structs are defined internally in raudio module
-type RAudioBuffer = C.rAudioBuffer
+pub type RAudioBuffer = C.rAudioBuffer
 
 @[typedef]
-struct C.rAudioProcessor {
+pub struct C.rAudioProcessor {
 }
 
 // Opaque structs declaration
 // NOTE: Actual structs are defined internally in raudio module
-type RAudioProcessor = C.rAudioProcessor
+pub type RAudioProcessor = C.rAudioProcessor
 
 @[typedef]
-struct C.AudioStream {
+pub struct C.AudioStream {
+pub:
 	// Pointer to internal data used by the audio system
 	buffer &RAudioBuffer
 	// Pointer to internal data processor, useful for audio effects
@@ -565,10 +588,11 @@ struct C.AudioStream {
 }
 
 // AudioStream, custom audio stream
-type AudioStream = C.AudioStream
+pub type AudioStream = C.AudioStream
 
 @[typedef]
-struct C.Sound {
+pub struct C.Sound {
+pub:
 	// Audio stream
 	stream AudioStream
 	// Total number of frames (considering channels)
@@ -576,27 +600,29 @@ struct C.Sound {
 }
 
 // Sound
-type Sound = C.Sound
+pub type Sound = C.Sound
 
 @[typedef]
-struct C.Music {
+pub struct C.Music {
+pub:
 	// Audio stream
 	stream AudioStream
 	// Total number of frames (considering channels)
 	frameCount u32
 	// Music looping enable
 	looping bool
-	// Type of music context (audio filetype)
+	// pub type of music context (audio filetype)
 	ctxType int
 	// Audio context data, depends on type
 	ctxData voidptr
 }
 
 // Music, audio stream, anything longer than ~10 seconds should be streamed
-type Music = C.Music
+pub type Music = C.Music
 
 @[typedef]
-struct C.VrDeviceInfo {
+pub struct C.VrDeviceInfo {
+pub:
 	// Horizontal resolution in pixels
 	hResolution int
 	// Vertical resolution in pixels
@@ -620,10 +646,11 @@ struct C.VrDeviceInfo {
 }
 
 // VrDeviceInfo, Head-Mounted-Display device parameters
-type VrDeviceInfo = C.VrDeviceInfo
+pub type VrDeviceInfo = C.VrDeviceInfo
 
 @[typedef]
-struct C.VrStereoConfig {
+pub struct C.VrStereoConfig {
+pub:
 	// VR projection matrices (per eye)
 	projection [2]Matrix
 	// VR view offset matrices (per eye)
@@ -643,10 +670,11 @@ struct C.VrStereoConfig {
 }
 
 // VrStereoConfig, VR stereo rendering configuration for simulator
-type VrStereoConfig = C.VrStereoConfig
+pub type VrStereoConfig = C.VrStereoConfig
 
 @[typedef]
-struct C.FilePathList {
+pub struct C.FilePathList {
+pub:
 	// Filepaths max entries
 	capacity u32
 	// Filepaths entries count
@@ -656,23 +684,25 @@ struct C.FilePathList {
 }
 
 // File path list
-type FilePathList = C.FilePathList
+pub type FilePathList = C.FilePathList
 
 @[typedef]
-struct C.AutomationEvent {
+pub struct C.AutomationEvent {
+pub:
 	// Event frame
 	frame u32
-	// Event type (AutomationEventType)
+	// Event pub type (AutomationEventType)
 	type u32
 	// Event parameters (if required)
 	params [4]int
 }
 
 // Automation event
-type AutomationEvent = C.AutomationEvent
+pub type AutomationEvent = C.AutomationEvent
 
 @[typedef]
-struct C.AutomationEventList {
+pub struct C.AutomationEventList {
+pub:
 	// Events max entries (MAX_AUTOMATION_EVENTS)
 	capacity u32
 	// Events entries count
@@ -682,7 +712,7 @@ struct C.AutomationEventList {
 }
 
 // Automation event list
-type AutomationEventList = C.AutomationEventList
+pub type AutomationEventList = C.AutomationEventList
 
 //----------------------------------------------------------------------------------
 // Enumerators Definition
@@ -691,7 +721,7 @@ type AutomationEventList = C.AutomationEventList
 // System/Window config flags
 // NOTE: Every bit registers one state (use it with bit masks)
 // By default all flags are set to 0
-enum ConfigFlag {
+pub enum ConfigFlag {
 	// Set to try enabling V-Sync on GPU
 	flag_vsync_hint = 0x00000040
 	// Set to run program in fullscreen
@@ -728,7 +758,7 @@ enum ConfigFlag {
 
 // Trace log level
 // NOTE: Organized by priority level
-enum TraceLogLevel {
+pub enum TraceLogLevel {
 	// Display all logs
 	log_all = 0
 	// Trace logging, intended for internal use only
@@ -750,7 +780,7 @@ enum TraceLogLevel {
 // Keyboard keys (US keyboard layout)
 // NOTE: Use GetKeyPressed() to allow redefining
 // required keys for alternative layouts
-enum KeyboardKey {
+pub enum KeyboardKey {
 	// Key: NULL, used for no key pressed
 	key_null = 0
 
@@ -969,7 +999,7 @@ enum KeyboardKey {
 }
 
 // android key buttons
-enum AndroidKey {
+pub enum AndroidKey {
 	// Key: Android back button
 	key_back = 4
 	// Key: Android menu button
@@ -980,12 +1010,12 @@ enum AndroidKey {
 	key_volume_down = 25
 }
 
-const mouse_left_button = MouseButton.mouse_button_left
-const mouse_right_button = MouseButton.mouse_button_right
-const mouse_middle_button = MouseButton.mouse_button_middle
+pub const mouse_left_button = MouseButton.mouse_button_left
+pub const mouse_right_button = MouseButton.mouse_button_right
+pub const mouse_middle_button = MouseButton.mouse_button_middle
 
 // Mouse buttons
-enum MouseButton {
+pub enum MouseButton {
 	// Mouse button left
 	mouse_button_left = 0
 	// Mouse button right
@@ -1003,7 +1033,7 @@ enum MouseButton {
 }
 
 // Mouse cursor
-enum MouseCursor {
+pub enum MouseCursor {
 	// Default pointer shape
 	mouse_cursor_default = 0
 	// Arrow shape
@@ -1029,7 +1059,7 @@ enum MouseCursor {
 }
 
 // Gamepad buttons
-enum GamepadButton {
+pub enum GamepadButton {
 	// Unknown button, just for error checking
 	gamepad_button_unknown = 0
 	// Gamepad left DPAD up button
@@ -1069,7 +1099,7 @@ enum GamepadButton {
 }
 
 // Gamepad axis
-enum GamepadAxis {
+pub enum GamepadAxis {
 	// Gamepad left stick X axis
 	gamepad_axis_left_x = 0
 	// Gamepad left stick Y axis
@@ -1085,7 +1115,7 @@ enum GamepadAxis {
 }
 
 // Material map index
-enum MaterialMapIndex {
+pub enum MaterialMapIndex {
 	// Albedo material (same as: MATERIAL_MAP_DIFFUSE)
 	material_map_albedo = 0
 	// Metalness material (same as: MATERIAL_MAP_SPECULAR)
@@ -1110,11 +1140,11 @@ enum MaterialMapIndex {
 	material_map_brdf
 }
 
-const material_map_diffuse = MaterialMapIndex.material_map_albedo
-const material_map_specular = MaterialMapIndex.material_map_metalness
+pub const material_map_diffuse = MaterialMapIndex.material_map_albedo
+pub const material_map_specular = MaterialMapIndex.material_map_metalness
 
 // Shader location index
-enum ShaderLocationIndex {
+pub enum ShaderLocationIndex {
 	// Shader location: vertex attribute: position
 	shader_loc_vertex_position = 0
 	// Shader location: vertex attribute: texcoord01
@@ -1169,11 +1199,11 @@ enum ShaderLocationIndex {
 	shader_loc_map_brdf
 }
 
-const shader_loc_map_diffuse = ShaderLocationIndex.shader_loc_map_albedo
-const shader_loc_map_specular = ShaderLocationIndex.shader_loc_map_metalness
+pub const shader_loc_map_diffuse = ShaderLocationIndex.shader_loc_map_albedo
+pub const shader_loc_map_specular = ShaderLocationIndex.shader_loc_map_metalness
 
 // Shader uniform data type
-enum ShaderUniformDataType {
+pub enum ShaderUniformDataType {
 	// Shader uniform type: float
 	shader_uniform_float = 0
 	// Shader uniform type: vec2 (2 float)
@@ -1195,7 +1225,7 @@ enum ShaderUniformDataType {
 }
 
 // Shader attribute data types
-enum ShaderAttributeDataType {
+pub enum ShaderAttributeDataType {
 	// Shader attribute type: float
 	shader_attrib_float = 0
 	// Shader attribute type: vec2 (2 float)
@@ -1208,7 +1238,7 @@ enum ShaderAttributeDataType {
 
 // Pixel formats
 // NOTE: Support depends on OpenGL version and platform
-enum PixelFormat {
+pub enum PixelFormat {
 	// 8 bit per pixel (no alpha)
 	pixelformat_uncompressed_grayscale = 1
 	// 8*2 bpp (2 channels)
@@ -1262,7 +1292,7 @@ enum PixelFormat {
 // Texture parameters: filter mode
 // NOTE 1: Filtering considers mipmaps if available in the texture
 // NOTE 2: Filter is accordingly set for minification and magnification
-enum TextureFilter {
+pub enum TextureFilter {
 	// No filter, just pixel approximation
 	texture_filter_point = 0
 	// Linear filtering
@@ -1278,7 +1308,7 @@ enum TextureFilter {
 }
 
 // Texture parameters: wrap mode
-enum TextureWrap {
+pub enum TextureWrap {
 	// Repeats texture in tiled mode
 	texture_wrap_repeat = 0
 	// Clamps texture to edge pixel in tiled mode
@@ -1290,7 +1320,7 @@ enum TextureWrap {
 }
 
 // Cubemap layouts
-enum CubemapLayout {
+pub enum CubemapLayout {
 	// Automatically detect layout type
 	cubemap_layout_auto_detect = 0
 	// Layout is defined by a vertical line with faces
@@ -1306,7 +1336,7 @@ enum CubemapLayout {
 }
 
 // Font type, defines generation method
-enum FontType {
+pub enum FontType {
 	// Default font generation, anti-aliased
 	font_default = 0
 	// Bitmap font generation, no anti-aliasing
@@ -1316,7 +1346,7 @@ enum FontType {
 }
 
 // Color blending modes (pre-defined)
-enum BlendMode {
+pub enum BlendMode {
 	// Blend textures considering alpha (default)
 	blend_alpha = 0
 	// Blend textures adding colors
@@ -1337,7 +1367,7 @@ enum BlendMode {
 
 // Gesture
 // NOTE: Provided as bit-wise flags to enable only desired gestures
-enum Gesture {
+pub enum Gesture {
 	// No gesture
 	gesture_none = 0
 	// Tap gesture
@@ -1363,7 +1393,7 @@ enum Gesture {
 }
 
 // Camera system modes
-enum CameraMode {
+pub enum CameraMode {
 	// Custom camera
 	camera_custom = 0
 	// Free camera
@@ -1377,7 +1407,7 @@ enum CameraMode {
 }
 
 // Camera projection
-enum CameraProjection {
+pub enum CameraProjection {
 	// Perspective projection
 	camera_perspective = 0
 	// Orthographic projection
@@ -1385,7 +1415,7 @@ enum CameraProjection {
 }
 
 // N-patch layout
-enum NPatchLayout {
+pub enum NPatchLayout {
 	// Npatch layout: 3x3 tiles
 	npatch_nine_patch = 0
 	// Npatch layout: 1x3 tiles
@@ -1395,25 +1425,25 @@ enum NPatchLayout {
 }
 
 @[typedef]
-struct C.va_list {}
+pub struct C.va_list {}
 
 // Callbacks to hook some internal functions
 // WARNING: These callbacks are intended for advance users
 
 // Logging: Redirect trace log messages
-type FnTraceLogCallback = fn (logLevel int, const_text &char, args C.va_list)
+pub type FnTraceLogCallback = fn (logLevel int, const_text &char, args C.va_list)
 
 // FileIO: Load binary data
-type FnLoadFileDataCallback = fn (const_fileName &char, dataSize &int) &u8
+pub type FnLoadFileDataCallback = fn (const_fileName &char, dataSize &int) &u8
 
 /// FileIO: Save binary data
-type FnSaveFileDataCallback = fn (const_fileName &char, data voidptr, dataSize int) bool
+pub type FnSaveFileDataCallback = fn (const_fileName &char, data voidptr, dataSize int) bool
 
 // FileIO: Load text data
-type FnLoadFileTextCallback = fn (const_fileName &char) &char
+pub type FnLoadFileTextCallback = fn (const_fileName &char) &char
 
 // FileIO: Save text data
-type FnSaveFileTextCallback = fn (const_fileName &char, text &char) bool
+pub type FnSaveFileTextCallback = fn (const_fileName &char, text &char) bool
 
 //------------------------------------------------------------------------------------
 // Window and Graphics Device Functions (Module: core)
@@ -1422,298 +1452,298 @@ type FnSaveFileTextCallback = fn (const_fileName &char, text &char) bool
 // Window-related functions
 
 // Initialize window and OpenGL context
-fn C.InitWindow(width int, height int, const_title &char)
+pub fn C.InitWindow(width int, height int, const_title &char)
 
 // Close window and unload OpenGL context
-fn C.CloseWindow()
+pub fn C.CloseWindow()
 
 // Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
-fn C.WindowShouldClose() bool
+pub fn C.WindowShouldClose() bool
 
 // Check if window has been initialized successfully
-fn C.IsWindowReady() bool
+pub fn C.IsWindowReady() bool
 
 // Check if window is currently fullscreen
-fn C.IsWindowFullscreen() bool
+pub fn C.IsWindowFullscreen() bool
 
 // Check if window is currently hidden (only PLATFORM_DESKTOP)
-fn C.IsWindowHidden() bool
+pub fn C.IsWindowHidden() bool
 
 // Check if window is currently minimized (only PLATFORM_DESKTOP)
-fn C.IsWindowMinimized() bool
+pub fn C.IsWindowMinimized() bool
 
 // Check if window is currently maximized (only PLATFORM_DESKTOP)
-fn C.IsWindowMaximized() bool
+pub fn C.IsWindowMaximized() bool
 
 // Check if window is currently focused (only PLATFORM_DESKTOP)
-fn C.IsWindowFocused() bool
+pub fn C.IsWindowFocused() bool
 
 // Check if window has been resized last frame
-fn C.IsWindowResized() bool
+pub fn C.IsWindowResized() bool
 
 // Check if one specific window flag is enabled
-fn C.IsWindowState(flag u32) bool
+pub fn C.IsWindowState(flag u32) bool
 
 // Set window configuration state using flags (only PLATFORM_DESKTOP)
-fn C.SetWindowState(flags u32)
+pub fn C.SetWindowState(flags u32)
 
 // Clear window configuration state flags
-fn C.ClearWindowState(flags u32)
+pub fn C.ClearWindowState(flags u32)
 
 // Toggle window state: fullscreen/windowed (only PLATFORM_DESKTOP)
-fn C.ToggleFullscreen()
+pub fn C.ToggleFullscreen()
 
 // Toggle window state: borderless windowed (only PLATFORM_DESKTOP)
-fn C.ToggleBorderlessWindowed()
+pub fn C.ToggleBorderlessWindowed()
 
 // Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
-fn C.MaximizeWindow()
+pub fn C.MaximizeWindow()
 
 // Set window state: minimized, if resizable (only PLATFORM_DESKTOP)
-fn C.MinimizeWindow()
+pub fn C.MinimizeWindow()
 
 // Set window state: not minimized/maximized (only PLATFORM_DESKTOP)
-fn C.RestoreWindow()
+pub fn C.RestoreWindow()
 
 // Set icon for window (single image, RGBA 32bit, only PLATFORM_DESKTOP)
-fn C.SetWindowIcon(image Image)
+pub fn C.SetWindowIcon(image Image)
 
 // Set icon for window (multiple images, RGBA 32bit, only PLATFORM_DESKTOP)
-fn C.SetWindowIcons(images &Image, count int)
+pub fn C.SetWindowIcons(images &Image, count int)
 
 // Set title for window (only PLATFORM_DESKTOP and PLATFORM_WEB)
-fn C.SetWindowTitle(const_title &char)
+pub fn C.SetWindowTitle(const_title &char)
 
 // Set window position on screen (only PLATFORM_DESKTOP)
-fn C.SetWindowPosition(x int, y int)
+pub fn C.SetWindowPosition(x int, y int)
 
 // Set monitor for the current window
-fn C.SetWindowMonitor(monitor int)
+pub fn C.SetWindowMonitor(monitor int)
 
 // Set window minimum dimensions (for FLAG_WINDOW_RESIZABLE)
-fn C.SetWindowMinSize(width int, height int)
+pub fn C.SetWindowMinSize(width int, height int)
 
 // Set window maximum dimensions (for FLAG_WINDOW_RESIZABLE)
-fn C.SetWindowMaxSize(width int, height int)
+pub fn C.SetWindowMaxSize(width int, height int)
 
 // Set window dimensions
-fn C.SetWindowSize(width int, height int)
+pub fn C.SetWindowSize(width int, height int)
 
 // Set window opacity [0.0f..1.0f] (only PLATFORM_DESKTOP)
-fn C.SetWindowOpacity(opacity f32)
+pub fn C.SetWindowOpacity(opacity f32)
 
 // Set window focused (only PLATFORM_DESKTOP)
-fn C.SetWindowFocused()
+pub fn C.SetWindowFocused()
 
 // Get native window handle
-fn C.GetWindowHandle() voidptr
+pub fn C.GetWindowHandle() voidptr
 
 // Get current screen width
-fn C.GetScreenWidth() int
+pub fn C.GetScreenWidth() int
 
 // Get current screen height
-fn C.GetScreenHeight() int
+pub fn C.GetScreenHeight() int
 
 // Get current render width (it considers HiDPI)
-fn C.GetRenderWidth() int
+pub fn C.GetRenderWidth() int
 
 // Get current render height (it considers HiDPI)
-fn C.GetRenderHeight() int
+pub fn C.GetRenderHeight() int
 
 // Get number of connected monitors
-fn C.GetMonitorCount() int
+pub fn C.GetMonitorCount() int
 
 // Get current connected monitor
-fn C.GetCurrentMonitor() int
+pub fn C.GetCurrentMonitor() int
 
 // Get specified monitor position
-fn C.GetMonitorPosition(monitor int) Vector2
+pub fn C.GetMonitorPosition(monitor int) Vector2
 
 // Get specified monitor width (current video mode used by monitor)
-fn C.GetMonitorWidth(monitor int) int
+pub fn C.GetMonitorWidth(monitor int) int
 
 // Get specified monitor height (current video mode used by monitor)
-fn C.GetMonitorHeight(monitor int) int
+pub fn C.GetMonitorHeight(monitor int) int
 
 // Get specified monitor physical width in millimetres
-fn C.GetMonitorPhysicalWidth(monitor int) int
+pub fn C.GetMonitorPhysicalWidth(monitor int) int
 
 // Get specified monitor physical height in millimetres
-fn C.GetMonitorPhysicalHeight(monitor int) int
+pub fn C.GetMonitorPhysicalHeight(monitor int) int
 
 // Get specified monitor refresh rate
-fn C.GetMonitorRefreshRate(monitor int) int
+pub fn C.GetMonitorRefreshRate(monitor int) int
 
 // Get window position XY on monitor
-fn C.GetWindowPosition() Vector2
+pub fn C.GetWindowPosition() Vector2
 
 // Get window scale DPI factor
-fn C.GetWindowScaleDPI() Vector2
+pub fn C.GetWindowScaleDPI() Vector2
 
 // Get the human-readable, UTF-8 encoded name of the specified monitor
-fn C.GetMonitorName(monitor int) &char
+pub fn C.GetMonitorName(monitor int) &char
 
 // Set clipboard text content
-fn C.SetClipboardText(const_text &char)
+pub fn C.SetClipboardText(const_text &char)
 
 // Get clipboard text content
-fn C.GetClipboardText() &char
+pub fn C.GetClipboardText() &char
 
 // Enable waiting for events on EndDrawing(), no automatic event polling
-fn C.EnableEventWaiting()
+pub fn C.EnableEventWaiting()
 
 // Disable waiting for events on EndDrawing(), automatic events polling
-fn C.DisableEventWaiting()
+pub fn C.DisableEventWaiting()
 
 // Cursor-related functions
 
 // Shows cursor
-fn C.ShowCursor()
+pub fn C.ShowCursor()
 
 // Hides cursor
-fn C.HideCursor()
+pub fn C.HideCursor()
 
 // Check if cursor is not visible
-fn C.IsCursorHidden() bool
+pub fn C.IsCursorHidden() bool
 
 // Enables cursor (unlock cursor)
-fn C.EnableCursor()
+pub fn C.EnableCursor()
 
 // Disables cursor (lock cursor)
-fn C.DisableCursor()
+pub fn C.DisableCursor()
 
 // Check if cursor is on the screen
-fn C.IsCursorOnScreen() bool
+pub fn C.IsCursorOnScreen() bool
 
 // Drawing-related functions
 
 // Set background color (framebuffer clear color)
-fn C.ClearBackground(color Color)
+pub fn C.ClearBackground(color Color)
 
 // Setup canvas (framebuffer) to start drawing
-fn C.BeginDrawing()
+pub fn C.BeginDrawing()
 
 // End canvas drawing and swap buffers (double buffering)
-fn C.EndDrawing()
+pub fn C.EndDrawing()
 
 // Begin 2D mode with custom camera (2D)
-fn C.BeginMode2D(camera Camera2D)
+pub fn C.BeginMode2D(camera Camera2D)
 
 // Ends 2D mode with custom camera
-fn C.EndMode2D()
+pub fn C.EndMode2D()
 
 // Begin 3D mode with custom camera (3D)
-fn C.BeginMode3D(camera Camera3D)
+pub fn C.BeginMode3D(camera Camera3D)
 
 // Ends 3D mode and returns to default 2D orthographic mode
-fn C.EndMode3D()
+pub fn C.EndMode3D()
 
 // Begin drawing to render texture
-fn C.BeginTextureMode(target RenderTexture2D)
+pub fn C.BeginTextureMode(target RenderTexture2D)
 
 // Ends drawing to render texture
-fn C.EndTextureMode()
+pub fn C.EndTextureMode()
 
 // Begin custom shader drawing
-fn C.BeginShaderMode(shader Shader)
+pub fn C.BeginShaderMode(shader Shader)
 
 // End custom shader drawing (use default shader)
-fn C.EndShaderMode()
+pub fn C.EndShaderMode()
 
 // Begin blending mode (alpha, additive, multiplied, subtract, custom)
-fn C.BeginBlendMode(mode int)
+pub fn C.BeginBlendMode(mode int)
 
 // End blending mode (reset to default: alpha blending)
-fn C.EndBlendMode()
+pub fn C.EndBlendMode()
 
 // Begin scissor mode (define screen area for following drawing)
-fn C.BeginScissorMode(x int, y int, width int, height int)
+pub fn C.BeginScissorMode(x int, y int, width int, height int)
 
 // End scissor mode
-fn C.EndScissorMode()
+pub fn C.EndScissorMode()
 
 // Begin stereo rendering (requires VR simulator)
-fn C.BeginVrStereoMode(config VrStereoConfig)
+pub fn C.BeginVrStereoMode(config VrStereoConfig)
 
 // End stereo rendering (requires VR simulator)
-fn C.EndVrStereoMode()
+pub fn C.EndVrStereoMode()
 
 // VR stereo config functions for VR simulator
 
 // Load VR stereo config for VR simulator device parameters
-fn C.LoadVrStereoConfig(device VrDeviceInfo) VrStereoConfig
+pub fn C.LoadVrStereoConfig(device VrDeviceInfo) VrStereoConfig
 
 // Unload VR stereo config
-fn C.UnloadVrStereoConfig(config VrStereoConfig)
+pub fn C.UnloadVrStereoConfig(config VrStereoConfig)
 
 // Shader management functions
 
 // Load shader from files and bind default locations
-fn C.LoadShader(const_vsFileName &char, const_fsFileName &char) Shader
+pub fn C.LoadShader(const_vsFileName &char, const_fsFileName &char) Shader
 
 // Load shader from code strings and bind default locations
-fn C.LoadShaderFromMemory(const_vsCode &char, const_fsCode &char) Shader
+pub fn C.LoadShaderFromMemory(const_vsCode &char, const_fsCode &char) Shader
 
 // Check if a shader is ready
-fn C.IsShaderReady(shader Shader) bool
+pub fn C.IsShaderReady(shader Shader) bool
 
 // Get shader uniform location
-fn C.GetShaderLocation(shader Shader, const_uniformName &char) int
+pub fn C.GetShaderLocation(shader Shader, const_uniformName &char) int
 
 // Get shader attribute location
-fn C.GetShaderLocationAttrib(shader Shader, const_attribName &char) int
+pub fn C.GetShaderLocationAttrib(shader Shader, const_attribName &char) int
 
 // Set shader uniform value
-fn C.SetShaderValue(shader Shader, locIndex int, const_value voidptr, uniformType int)
+pub fn C.SetShaderValue(shader Shader, locIndex int, const_value voidptr, uniformpub type, int)
 
 // Set shader uniform value vector
-fn C.SetShaderValueV(shader Shader, locIndex int, const_value voidptr, uniformType int, count int)
+pub fn C.SetShaderValueV(shader Shader, locIndex int, const_value voidptr, uniformpub type, int, count int)
 
 // Set shader uniform value (matrix 4x4)
-fn C.SetShaderValueMatrix(shader Shader, locIndex int, mat Matrix)
+pub fn C.SetShaderValueMatrix(shader Shader, locIndex int, mat Matrix)
 
 // Set shader uniform value for texture (sampler2d)
-fn C.SetShaderValueTexture(shader Shader, locIndex int, texture Texture2D)
+pub fn C.SetShaderValueTexture(shader Shader, locIndex int, texture Texture2D)
 
 // Unload shader from GPU memory (VRAM)
-fn C.UnloadShader(shader Shader)
+pub fn C.UnloadShader(shader Shader)
 
 // Screen-space-related functions
 
 // Get a ray trace from mouse position
-fn C.GetMouseRay(mousePosition Vector2, camera Camera, camera)
+pub fn C.GetMouseRay(mousePosition Vector2, camera Camera, camera)
 
 // Get camera transform matrix (view matrix)
-fn C.GetCameraMatrix(camera Camera)
+pub fn C.GetCameraMatrix(camera Camera)
 
 // Get camera 2d transform matrix
-fn C.GetCameraMatrix2D(camera Camera2D)
+pub fn C.GetCameraMatrix2D(camera Camera2D)
 
 // Get the screen space position for a 3d world space position
-fn C.GetWorldToScreen(position Vector3, camera Camera) Vector2
+pub fn C.GetWorldToScreen(position Vector3, camera Camera) Vector2
 
 // Get the world space position for a 2d camera screen space position
-fn C.GetScreenToWorld2D(position Vector2, camera Camera2D) Vector2
+pub fn C.GetScreenToWorld2D(position Vector2, camera Camera2D) Vector2
 
 // Get size position for a 3d world space position
-fn C.GetWorldToScreenEx(position Vector3, camera Camera, width int, height int) Vector2
+pub fn C.GetWorldToScreenEx(position Vector3, camera Camera, width int, height int) Vector2
 
 // Get the screen space position for a 2d camera world space position
-fn C.GetWorldToScreen2D(position Vector2, camera Camera2D) Vector2
+pub fn C.GetWorldToScreen2D(position Vector2, camera Camera2D) Vector2
 
 // Timing-related functions
 
 // Set target FPS (maximum)
-fn C.SetTargetFPS(fps int)
+pub fn C.SetTargetFPS(fps int)
 
 // Get time in seconds for last frame drawn (delta time)
-fn C.GetFrameTime() f32
+pub fn C.GetFrameTime() f32
 
 // Get elapsed time in seconds since InitWindow()
-fn C.GetTime() f64
+pub fn C.GetTime() f64
 
 // Get current FPS
-fn C.GetFPS() int
+pub fn C.GetFPS() int
 
 // Custom frame control functions
 // NOTE: Those functions are intended for advance users that want full control over the frame processing
@@ -1721,201 +1751,201 @@ fn C.GetFPS() int
 // To a that behaviour and control frame processes manually, enable in config.h: SUPPORT_CUSTOM_FRAME_CONTROL
 
 // Swap back buffer with front buffer (screen drawing)
-fn C.SwapScreenBuffer()
+pub fn C.SwapScreenBuffer()
 
 // Register all input events
-fn C.PollInputEvents()
+pub fn C.PollInputEvents()
 
 // Wait for some time (halt program execution)
-fn C.WaitTime(seconds f64)
+pub fn C.WaitTime(seconds f64)
 
 // Random values generation functions
 
 // Set the seed for the random number generator
-fn C.SetRandomSeed(seed u32)
+pub fn C.SetRandomSeed(seed u32)
 
 // Get a random value between min and max (both included)
-fn C.GetRandomValue(min int, max int) int
+pub fn C.GetRandomValue(min int, max int) int
 
 // Load random values sequence, no values repeated
-fn C.LoadRandomSequence(count u32, min int, max int) &int
+pub fn C.LoadRandomSequence(count u32, min int, max int) &int
 
 // Unload random values sequence
-fn C.UnloadRandomSequence(sequence &int)
+pub fn C.UnloadRandomSequence(sequence &int)
 
 // Misc. functions
 
 // Takes a screenshot of current screen (filename extension defines format)
-fn C.TakeScreenshot(const_fileName &char)
+pub fn C.TakeScreenshot(const_fileName &char)
 
 // Setup init configuration flags (view FLAGS)
-fn C.SetConfigFlags(flags u32)
+pub fn C.SetConfigFlags(flags u32)
 
 // Open URL with default system browser (if available)
-fn C.OpenURL(const_url &char)
+pub fn C.OpenURL(const_url &char)
 
 // NOTE: Following functions implemented in module [utils]
 //------------------------------------------------------------------
 
 // Show trace log messages (LOG_DEBUG, LOG_INFO, LOG_WARNING, LOG_ERROR...)
-fn C.TraceLog(logLevel int, const_text &char, ...)
+pub fn C.TraceLog(logLevel int, const_text &char, ...)
 
 // Set the current threshold (minimum) log level
-fn C.SetTraceLogLevel(logLevel int)
+pub fn C.SetTraceLogLevel(logLevel int)
 
 // Internal memory allocator
-fn C.MemAlloc(size u32) voidptr
+pub fn C.MemAlloc(size u32) voidptr
 
 // Internal memory reallocator
-fn C.MemRealloc(ptr voidptr, size u32) voidptr
+pub fn C.MemRealloc(ptr voidptr, size u32) voidptr
 
 // Internal memory free
-fn C.MemFree(ptr voidptr)
+pub fn C.MemFree(ptr voidptr)
 
 // Set custom callbacks
 // WARNING: Callbacks setup is intended for advance users
 
 // Set custom trace log
-fn C.SetTraceLogCallback(callback TraceLogCallback)
+pub fn C.SetTraceLogCallback(callback TraceLogCallback)
 
 // Set custom file binary data loader
-fn C.SetLoadFileDataCallback(callback LoadFileDataCallback)
+pub fn C.SetLoadFileDataCallback(callback LoadFileDataCallback)
 
 // Set custom file binary data saver
-fn C.SetSaveFileDataCallback(callback SaveFileDataCallback)
+pub fn C.SetSaveFileDataCallback(callback SaveFileDataCallback)
 
 // Set custom file text data loader
-fn C.SetLoadFileTextCallback(callback LoadFileTextCallback)
+pub fn C.SetLoadFileTextCallback(callback LoadFileTextCallback)
 
 // Set custom file text data saver
-fn C.SetSaveFileTextCallback(callback SaveFileTextCallback)
+pub fn C.SetSaveFileTextCallback(callback SaveFileTextCallback)
 
 // Files management functions
 
 // Load file data as byte array (read)
-fn C.LoadFileData(const_fileName &char, dataSize &int) &u8
+pub fn C.LoadFileData(const_fileName &char, dataSize &int) &u8
 
 // Unload file data allocated by LoadFileData()
-fn C.UnloadFileData(data &u8)
+pub fn C.UnloadFileData(data &u8)
 
 // Save data to file from byte array (write), returns true on success
-fn C.SaveFileData(const_fileName &char, data voidptr, int dataSize) bool
+pub fn C.SaveFileData(const_fileName &char, data voidptr, int dataSize) bool
 
 // Export data to code (.h), returns true on success
-fn C.ExportDataAsCode(const_data &u8, dataSize int, const_fileName &char) bool
+pub fn C.ExportDataAsCode(const_data &u8, dataSize int, const_fileName &char) bool
 
 // Load text data from file (read), returns a '\0' terminated string
-fn C.LoadFileText(const_fileName &char) &char
+pub fn C.LoadFileText(const_fileName &char) &char
 
 // Unload file text data allocated by LoadFileText()
-fn C.UnloadFileText(text &char)
+pub fn C.UnloadFileText(text &char)
 
 // Save text data to file (write), string must be '\0' terminated, returns true on success
-fn C.SaveFileText(const_fileName &char, text &char) bool
+pub fn C.SaveFileText(const_fileName &char, text &char) bool
 
 //------------------------------------------------------------------
 
 // File system functions
 
 // Check if file exists
-fn C.FileExists(const_fileName &char) bool
+pub fn C.FileExists(const_fileName &char) bool
 
 // Check if a directory path exists
-fn C.DirectoryExists(const_dirPath &char) bool
+pub fn C.DirectoryExists(const_dirPath &char) bool
 
 // Check file extension (including point: .png, .wav)
-fn C.IsFileExtension(const_fileName &char, const_ext &char) bool
+pub fn C.IsFileExtension(const_fileName &char, const_ext &char) bool
 
 // Get file length in bytes (NOTE: GetFileSize() conflicts with windows.h)
-fn C.GetFileLength(const_fileName &char) int
+pub fn C.GetFileLength(const_fileName &char) int
 
 // Get pointer to extension for a filename string (includes dot: '.png')
-fn C.GetFileExtension(const_fileName &char) &char
+pub fn C.GetFileExtension(const_fileName &char) &char
 
 // Get pointer to filename for a path string
-fn C.GetFileName(const_filePath &char) &char
+pub fn C.GetFileName(const_filePath &char) &char
 
 // Get filename string without extension (uses static string)
-fn C.GetFileNameWithoutExt(const_filePath &char) &char
+pub fn C.GetFileNameWithoutExt(const_filePath &char) &char
 
 // Get full path for a given fileName with path (uses static string)
-fn C.GetDirectoryPath(const_filePath &char) &char
+pub fn C.GetDirectoryPath(const_filePath &char) &char
 
 // Get previous directory path for a given path (uses static string)
-fn C.GetPrevDirectoryPath(const_dirPath &char) &char
+pub fn C.GetPrevDirectoryPath(const_dirPath &char) &char
 
 // Get current working directory (uses static string)
-fn C.GetWorkingDirectory() &char
+pub fn C.GetWorkingDirectory() &char
 
 // Get the directory of the running application (uses static string)
-fn C.GetApplicationDirectory() &char
+pub fn C.GetApplicationDirectory() &char
 
 // Change working directory, return true on success
-fn C.ChangeDirectory(const_dir &char) bool
+pub fn C.ChangeDirectory(const_dir &char) bool
 
 // Check if a given path is a file or a directory
-fn C.IsPathFile(const_path &char) bool
+pub fn C.IsPathFile(const_path &char) bool
 
 // Load directory filepaths
-fn C.LoadDirectoryFiles(const_dirPath &char) FilePathList
+pub fn C.LoadDirectoryFiles(const_dirPath &char) FilePathList
 
 // Load directory filepaths with extension filtering and recursive directory scan
-fn C.LoadDirectoryFilesEx(const_basePath &char, const_filter &char, scanSubdirs bool) FilePathList
+pub fn C.LoadDirectoryFilesEx(const_basePath &char, const_filter &char, scanSubdirs bool) FilePathList
 
 // Unload filepaths
-fn C.UnloadDirectoryFiles(files FilePathList)
+pub fn C.UnloadDirectoryFiles(files FilePathList)
 
 // Check if a file has been dropped into window
-fn C.IsFileDropped() bool
+pub fn C.IsFileDropped() bool
 
 // Load dropped filepaths
-fn C.LoadDroppedFiles() FilePathList
+pub fn C.LoadDroppedFiles() FilePathList
 
 // Unload dropped filepaths
-fn C.UnloadDroppedFiles(files FilePathList)
+pub fn C.UnloadDroppedFiles(files FilePathList)
 
 // Get file modification time (last write time)
-fn C.GetFileModTime(const_fileName &char) i64
+pub fn C.GetFileModTime(const_fileName &char) i64
 
 // Compression/Encoding functionality
 
 // Compress data (DEFLATE algorithm), memory must be MemFree()
-fn C.CompressData(const_data &u8, dataSize int, compDataSize &int) &u8
+pub fn C.CompressData(const_data &u8, dataSize int, compDataSize &int) &u8
 
 // Decompress data (DEFLATE algorithm), memory must be MemFree()
-fn C.DecompressData(const_compData &u8, compDataSize int, dataSize &int) &u8
+pub fn C.DecompressData(const_compData &u8, compDataSize int, dataSize &int) &u8
 
 // Encode data to Base64 string, memory must be MemFree()
-fn C.EncodeDataBase64(const_data &u8, dataSize int, outputSize &int) &char
+pub fn C.EncodeDataBase64(const_data &u8, dataSize int, outputSize &int) &char
 
 // Decode Base64 string data, memory must be MemFree()
-fn C.DecodeDataBase64(const_data &u8, outputSize &int) &u8
+pub fn C.DecodeDataBase64(const_data &u8, outputSize &int) &u8
 
 // Automation events functionality
 
 // Load automation events list from file, NULL for empty list, capacity = MAX_AUTOMATION_EVENTS
-fn C.LoadAutomationEventList(const_fileName &char) AutomationEventList
+pub fn C.LoadAutomationEventList(const_fileName &char) AutomationEventList
 
 // Unload automation events list from file
-fn C.UnloadAutomationEventList(list &AutomationEventList)
+pub fn C.UnloadAutomationEventList(list &AutomationEventList)
 
 // Export automation events list as text file
-fn C.ExportAutomationEventList(list AutomationEventList, const_fileName &char) bool
+pub fn C.ExportAutomationEventList(list AutomationEventList, const_fileName &char) bool
 
 // Set automation event list to record to
-fn C.SetAutomationEventList(list &AutomationEventList)
+pub fn C.SetAutomationEventList(list &AutomationEventList)
 
 // Set automation event internal base frame to start recording
-fn C.SetAutomationEventBaseFrame(frame int)
+pub fn C.SetAutomationEventBaseFrame(frame int)
 
 // Start recording automation events (AutomationEventList must be set)
-fn C.StartAutomationEventRecording()
+pub fn C.StartAutomationEventRecording()
 
 // Stop recording automation events
-fn C.StopAutomationEventRecording()
+pub fn C.StopAutomationEventRecording()
 
 // Play a recorded automation event
-fn C.PlayAutomationEvent(event AutomationEvent)
+pub fn C.PlayAutomationEvent(event AutomationEvent)
 
 //------------------------------------------------------------------------------------
 // Input Handling Functions (Module: core)
@@ -1924,159 +1954,159 @@ fn C.PlayAutomationEvent(event AutomationEvent)
 // Input-related functions: keyboard
 
 // Check if a key has been pressed once
-fn C.IsKeyPressed(key int) bool
+pub fn C.IsKeyPressed(key int) bool
 
 // Check if a key has been pressed again (Only PLATFORM_DESKTOP)
-fn C.IsKeyPressedRepeat(key int) bool
+pub fn C.IsKeyPressedRepeat(key int) bool
 
 // Check if a key is being pressed
-fn C.IsKeyDown(key int) bool
+pub fn C.IsKeyDown(key int) bool
 
 // Check if a key has been released once
-fn C.IsKeyReleased(key int) bool
+pub fn C.IsKeyReleased(key int) bool
 
 // Check if a key is NOT being pressed
-fn C.IsKeyUp(key int) bool
+pub fn C.IsKeyUp(key int) bool
 
 // Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
-fn C.GetKeyPressed() int
+pub fn C.GetKeyPressed() int
 
 // Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
-fn C.GetCharPressed() int
+pub fn C.GetCharPressed() int
 
 // Set a custom key to exit program (default is ESC)
-fn C.SetExitKey(key int)
+pub fn C.SetExitKey(key int)
 
 // Input-related functions: gamepads
 
 // Check if a gamepad is available
-fn C.IsGamepadAvailable(gamepad int) bool
+pub fn C.IsGamepadAvailable(gamepad int) bool
 
 // Get gamepad internal name id
-fn C.GetGamepadName(gamepad int) &char
+pub fn C.GetGamepadName(gamepad int) &char
 
 // Check if a gamepad button has been pressed once
-fn C.IsGamepadButtonPressed(gamepad int, button int) bool
+pub fn C.IsGamepadButtonPressed(gamepad int, button int) bool
 
 // Check if a gamepad button is being pressed
-fn C.IsGamepadButtonDown(gamepad int, button int) bool
+pub fn C.IsGamepadButtonDown(gamepad int, button int) bool
 
 // Check if a gamepad button has been released once
-fn C.IsGamepadButtonReleased(gamepad int, button int) bool
+pub fn C.IsGamepadButtonReleased(gamepad int, button int) bool
 
 // Check if a gamepad button is NOT being pressed
-fn C.IsGamepadButtonUp(gamepad int, button int) bool
+pub fn C.IsGamepadButtonUp(gamepad int, button int) bool
 
 // Get the last gamepad button pressed
-fn C.GetGamepadButtonPressed() int
+pub fn C.GetGamepadButtonPressed() int
 
 // Get gamepad axis count for a gamepad
-fn C.GetGamepadAxisCount(gamepad int) int
+pub fn C.GetGamepadAxisCount(gamepad int) int
 
 // Get axis movement value for a gamepad axis
-fn C.GetGamepadAxisMovement(gamepad int, axis int) f32
+pub fn C.GetGamepadAxisMovement(gamepad int, axis int) f32
 
 // Set internal gamepad mappings (SDL_GameControllerDB)
-fn C.SetGamepadMappings(const_mappings &char) int
+pub fn C.SetGamepadMappings(const_mappings &char) int
 
 // Input-related functions: mouse
 
 // Check if a mouse button has been pressed once
-fn C.IsMouseButtonPressed(button int) bool
+pub fn C.IsMouseButtonPressed(button int) bool
 
 // Check if a mouse button is being pressed
-fn C.IsMouseButtonDown(button int) bool
+pub fn C.IsMouseButtonDown(button int) bool
 
 // Check if a mouse button has been released once
-fn C.IsMouseButtonReleased(button int) bool
+pub fn C.IsMouseButtonReleased(button int) bool
 
 // Check if a mouse button is NOT being pressed
-fn C.IsMouseButtonUp(button int) bool
+pub fn C.IsMouseButtonUp(button int) bool
 
 // Get mouse position X
-fn C.GetMouseX() int
+pub fn C.GetMouseX() int
 
 // Get mouse position Y
-fn C.GetMouseY() int
+pub fn C.GetMouseY() int
 
 // Get mouse position XY
-fn C.GetMousePosition() Vector2
+pub fn C.GetMousePosition() Vector2
 
 // Get mouse delta between frames
-fn C.GetMouseDelta() Vector2
+pub fn C.GetMouseDelta() Vector2
 
 // Set mouse position XY
-fn C.SetMousePosition(x int, y int)
+pub fn C.SetMousePosition(x int, y int)
 
 // Set mouse offset
-fn C.SetMouseOffset(offsetX int, offsetY int)
+pub fn C.SetMouseOffset(offsetX int, offsetY int)
 
 // Set mouse scaling
-fn C.SetMouseScale(scaleX f32, scaleY f32)
+pub fn C.SetMouseScale(scaleX f32, scaleY f32)
 
 // Get mouse wheel movement for X or Y, whichever is larger
-fn C.GetMouseWheelMove() f32
+pub fn C.GetMouseWheelMove() f32
 
 // Get mouse wheel movement for both X and Y
-fn C.GetMouseWheelMoveV() Vector2
+pub fn C.GetMouseWheelMoveV() Vector2
 
 // Set mouse cursor
-fn C.SetMouseCursor(cursor int)
+pub fn C.SetMouseCursor(cursor int)
 
 // Input-related functions: touch
 
 // Get touch position X for touch point 0 (relative to screen size)
-fn C.GetTouchX() int
+pub fn C.GetTouchX() int
 
 // Get touch position Y for touch point 0 (relative to screen size)
-fn C.GetTouchY() int
+pub fn C.GetTouchY() int
 
 // Get touch position XY for a touch poindex int (relative to screen size)
-fn C.GetTouchPosition(index int) Vector2
+pub fn C.GetTouchPosition(index int) Vector2
 
 // Get touch point identifier for given index
-fn C.GetTouchPointId(index int) int
+pub fn C.GetTouchPointId(index int) int
 
 // Get number of touch points
-fn C.GetTouchPointCount() int
+pub fn C.GetTouchPointCount() int
 
 //------------------------------------------------------------------------------------
 // Gestures and Touch Handling Functions (Module: rgestures)
 //------------------------------------------------------------------------------------
 
 // Enable a set of gestures using flags
-fn C.SetGesturesEnabled(flags u32)
+pub fn C.SetGesturesEnabled(flags u32)
 
 // Check if a gesture have been detected
-fn C.IsGestureDetected(gesture u32) bool
+pub fn C.IsGestureDetected(gesture u32) bool
 
 // Get latest detected gesture
-fn C.GetGestureDetected() int
+pub fn C.GetGestureDetected() int
 
 // Get gesture hold time in milliseconds
-fn C.GetGestureHoldDuration() f32
+pub fn C.GetGestureHoldDuration() f32
 
 // Get gesture drag vector
-fn C.GetGestureDragVector() Vector2
+pub fn C.GetGestureDragVector() Vector2
 
 // Get gesture drag angle
-fn C.GetGestureDragAngle() f32
+pub fn C.GetGestureDragAngle() f32
 
 // Get gesture pinch delta
-fn C.GetGesturePinchVector() Vector2
+pub fn C.GetGesturePinchVector() Vector2
 
 // Get gesture pinch angle
-fn C.GetGesturePinchAngle() f32
+pub fn C.GetGesturePinchAngle() f32
 
 //------------------------------------------------------------------------------------
 // Camera System Functions (Module: rcamera)
 //------------------------------------------------------------------------------------
 
 // Update camera position for selected mode
-fn C.UpdateCamera(camera &Camera, mode int)
+pub fn C.UpdateCamera(camera &Camera, mode int)
 
 // Update camera movement/rotation
-fn C.UpdateCameraPro(camera &Camera, movement Vector3, rotation Vector3, zoom f32)
+pub fn C.UpdateCameraPro(camera &Camera, movement Vector3, rotation Vector3, zoom f32)
 
 //------------------------------------------------------------------------------------
 // Basic Shapes Drawing Functions (Module: shapes)
@@ -2087,198 +2117,198 @@ fn C.UpdateCameraPro(camera &Camera, movement Vector3, rotation Vector3, zoom f3
 // defining a font char white rectangle would allow drawing everything in a single draw call
 
 // Set texture and rectangle to be used on shapes drawing
-fn C.SetShapesTexture(texture Texture2D, source Rectangle)
+pub fn C.SetShapesTexture(texture Texture2D, source Rectangle)
 
 // Basic shapes drawing functions
 
 // Draw a pixel
-fn C.DrawPixel(posX int, posY int, color Color)
+pub fn C.DrawPixel(posX int, posY int, color Color)
 
 // Draw a pixel (Vector version)
-fn C.DrawPixelV(position Vector2, color Color)
+pub fn C.DrawPixelV(position Vector2, color Color)
 
 // Draw a line
-fn C.DrawLine(startPosX int, startPosY int, endPosX int, endPosY int, color Color)
+pub fn C.DrawLine(startPosX int, startPosY int, endPosX int, endPosY int, color Color)
 
 // Draw a line (using gl lines)
-fn C.DrawLineV(startPos Vector2, endPos Vector2, color Color)
+pub fn C.DrawLineV(startPos Vector2, endPos Vector2, color Color)
 
 // Draw a line (using triangles/quads)
-fn C.DrawLineEx(startPos Vector2, endPos Vector2, f32 thick, color Color)
+pub fn C.DrawLineEx(startPos Vector2, endPos Vector2, f32 thick, color Color)
 
 // Draw lines sequence (using gl lines)
-fn C.DrawLineStrip(points &Vector2, int pointCount, color Color)
+pub fn C.DrawLineStrip(points &Vector2, int pointCount, color Color)
 
 // Draw line segment cubic-bezier in-out interpolation
-fn C.DrawLineBezier(startPos Vector2, endPos Vector2, f32 thick, color Color)
+pub fn C.DrawLineBezier(startPos Vector2, endPos Vector2, f32 thick, color Color)
 
 // Draw a color-filled circle
-fn C.DrawCircle(centerX int, centerY int, radius f32, color Color)
+pub fn C.DrawCircle(centerX int, centerY int, radius f32, color Color)
 
 // Draw a piece of a circle
-fn C.DrawCircleSector(center Vector2, radius f32, startAngle f32, endAngle f32, segments int, color Color)
+pub fn C.DrawCircleSector(center Vector2, radius f32, startAngle f32, endAngle f32, segments int, color Color)
 
 // Draw circle sector outline
-fn C.DrawCircleSectorLines(center Vector2, radius f32, startAngle f32, endAngle f32, segments int, color Color)
+pub fn C.DrawCircleSectorLines(center Vector2, radius f32, startAngle f32, endAngle f32, segments int, color Color)
 
 // Draw a gradient-filled circle
-fn C.DrawCircleGradient(centerX int, centerY int, radius f32, color1 Color, color2 Color)
+pub fn C.DrawCircleGradient(centerX int, centerY int, radius f32, color1 Color, color2 Color)
 
 // Draw a color-filled circle (Vector version)
-fn C.DrawCircleV(center Vector2, radius f32, color Color)
+pub fn C.DrawCircleV(center Vector2, radius f32, color Color)
 
 // Draw circle outline
-fn C.DrawCircleLines(centerX int, centerY int, radius f32, color Color)
+pub fn C.DrawCircleLines(centerX int, centerY int, radius f32, color Color)
 
 // Draw circle outline (Vector version)
-fn C.DrawCircleLinesV(center Vector2, radius f32, color Color)
+pub fn C.DrawCircleLinesV(center Vector2, radius f32, color Color)
 
 // Draw ellipse
-fn C.DrawEllipse(centerX int, centerY int, radiusH f32, radiusV f32, color Color)
+pub fn C.DrawEllipse(centerX int, centerY int, radiusH f32, radiusV f32, color Color)
 
 // Draw ellipse outline
-fn C.DrawEllipseLines(centerX int, centerY int, radiusH f32, radiusV f32, color Color)
+pub fn C.DrawEllipseLines(centerX int, centerY int, radiusH f32, radiusV f32, color Color)
 
 // Draw ring
-fn C.DrawRing(center Vector2, innerRadius f32, outerRadius f32, startAngle f32, endAngle f32, segments int, color Color)
+pub fn C.DrawRing(center Vector2, innerRadius f32, outerRadius f32, startAngle f32, endAngle f32, segments int, color Color)
 
 // Draw ring outline
-fn C.DrawRingLines(center Vector2, innerRadius f32, outerRadius f32, startAngle f32, endAngle f32, segments int, color Color)
+pub fn C.DrawRingLines(center Vector2, innerRadius f32, outerRadius f32, startAngle f32, endAngle f32, segments int, color Color)
 
 // Draw a color-filled rectangle
-fn C.DrawRectangle(posX int, posY int, width int, height int, color Color)
+pub fn C.DrawRectangle(posX int, posY int, width int, height int, color Color)
 
 // Draw a color-filled rectangle (Vector version)
-fn C.DrawRectangleV(position Vector2, size Vector2, color Color)
+pub fn C.DrawRectangleV(position Vector2, size Vector2, color Color)
 
 // Draw a color-filled rectangle
-fn C.DrawRectangleRec(rec Rectangle, color Color)
+pub fn C.DrawRectangleRec(rec Rectangle, color Color)
 
 // Draw a color-filled rectangle with pro parameters
-fn C.DrawRectanglePro(rec Rectangle, origin Vector2, rotation f32, color Color)
+pub fn C.DrawRectanglePro(rec Rectangle, origin Vector2, rotation f32, color Color)
 
 // Draw a vertical-gradient-filled rectangle
-fn C.DrawRectangleGradientV(posX int, posY int, width int, height int, color1 Color, color2 Color)
+pub fn C.DrawRectangleGradientV(posX int, posY int, width int, height int, color1 Color, color2 Color)
 
 // Draw a horizontal-gradient-filled rectangle
-fn C.DrawRectangleGradientH(posX int, posY int, width int, height int, color1 Color, color2 Color)
+pub fn C.DrawRectangleGradientH(posX int, posY int, width int, height int, color1 Color, color2 Color)
 
 // Draw a gradient-filled rectangle with custom vertex colors
-fn C.DrawRectangleGradientEx(rec Rectangle, col1 Color, col2 Color, col3 Color, col4 Color)
+pub fn C.DrawRectangleGradientEx(rec Rectangle, col1 Color, col2 Color, col3 Color, col4 Color)
 
 // Draw rectangle outline
-fn C.DrawRectangleLines(posX int, posY int, width int, height int, color Color)
+pub fn C.DrawRectangleLines(posX int, posY int, width int, height int, color Color)
 
 // Draw rectangle outline with extended parameters
-fn C.DrawRectangleLinesEx(rec Rectangle, lineThick f32, color Color)
+pub fn C.DrawRectangleLinesEx(rec Rectangle, lineThick f32, color Color)
 
 // Draw rectangle with rounded edges
-fn C.DrawRectangleRounded(rec Rectangle, roundness f32, segments int, color Color)
+pub fn C.DrawRectangleRounded(rec Rectangle, roundness f32, segments int, color Color)
 
 // Draw rectangle with rounded edges outline
-fn C.DrawRectangleRoundedLines(rec Rectangle, roundness f32, segments int, lineThick f32, color Color)
+pub fn C.DrawRectangleRoundedLines(rec Rectangle, roundness f32, segments int, lineThick f32, color Color)
 
 // Draw a color-filled triangle (vertex in counter-clockwise order!)
-fn C.DrawTriangle(v1 Vector2, v2 Vector2, v3 Vector2, color Color)
+pub fn C.DrawTriangle(v1 Vector2, v2 Vector2, v3 Vector2, color Color)
 
 // Draw triangle outline (vertex in counter-clockwise order!)
-fn C.DrawTriangleLines(v1 Vector2, v2 Vector2, v3 Vector2, color Color)
+pub fn C.DrawTriangleLines(v1 Vector2, v2 Vector2, v3 Vector2, color Color)
 
 // Draw a triangle fan defined by points (first vertex is the center)
-fn C.DrawTriangleFan(points &Vector2, int pointCount, color Color)
+pub fn C.DrawTriangleFan(points &Vector2, int pointCount, color Color)
 
 // Draw a triangle strip defined by points
-fn C.DrawTriangleStrip(points &Vector2, int pointCount, color Color)
+pub fn C.DrawTriangleStrip(points &Vector2, int pointCount, color Color)
 
 // Draw a regular polygon (Vector version)
-fn C.DrawPoly(center Vector2, sides int, radius f32, rotation f32, color Color)
+pub fn C.DrawPoly(center Vector2, sides int, radius f32, rotation f32, color Color)
 
 // Draw a polygon outline of n sides
-fn C.DrawPolyLines(center Vector2, sides int, radius f32, rotation f32, color Color)
+pub fn C.DrawPolyLines(center Vector2, sides int, radius f32, rotation f32, color Color)
 
 // Draw a polygon outline of n sides with extended parameters
-fn C.DrawPolyLinesEx(center Vector2, sides int, radius f32, rotation f32, lineThick f32, color Color)
+pub fn C.DrawPolyLinesEx(center Vector2, sides int, radius f32, rotation f32, lineThick f32, color Color)
 
 // Splines drawing functions
 
 // Draw spline: Linear, minimum 2 points
-fn C.DrawSplineLinear(points &Vector2, pointCount int, thick f32, color Color)
+pub fn C.DrawSplineLinear(points &Vector2, pointCount int, thick f32, color Color)
 
 // Draw spline: B-Spline, minimum 4 points
-fn C.DrawSplineBasis(points &Vector2, pointCount int, thick f32, color Color)
+pub fn C.DrawSplineBasis(points &Vector2, pointCount int, thick f32, color Color)
 
 // Draw spline: Catmull-Rom, minimum 4 points
-fn C.DrawSplineCatmullRom(points &Vector2, pointCount int, thick f32, color Color)
+pub fn C.DrawSplineCatmullRom(points &Vector2, pointCount int, thick f32, color Color)
 
 // Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
-fn C.DrawSplineBezierQuadratic(points &Vector2, pointCount int, thick f32, color Color)
+pub fn C.DrawSplineBezierQuadratic(points &Vector2, pointCount int, thick f32, color Color)
 
 // Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
-fn C.DrawSplineBezierCubic(points &Vector2, pointCount int, thick f32, color Color)
+pub fn C.DrawSplineBezierCubic(points &Vector2, pointCount int, thick f32, color Color)
 
 // Draw spline segment: Linear, 2 points
-fn C.DrawSplineSegmentLinear(p1 Vector2, p2 Vector2, thick f32, color Color)
+pub fn C.DrawSplineSegmentLinear(p1 Vector2, p2 Vector2, thick f32, color Color)
 
 // Draw spline segment: B-Spline, 4 points
-fn C.DrawSplineSegmentBasis(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, thick f32, color Color)
+pub fn C.DrawSplineSegmentBasis(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, thick f32, color Color)
 
 // Draw spline segment: Catmull-Rom, 4 points
-fn C.DrawSplineSegmentCatmullRom(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, thick f32, color Color)
+pub fn C.DrawSplineSegmentCatmullRom(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, thick f32, color Color)
 
 // Draw spline segment: Quadratic Bezier, 2 points, 1 control point
-fn C.DrawSplineSegmentBezierQuadratic(p1 Vector2, c2 Vector2, p3 Vector2, thick f32, color Color)
+pub fn C.DrawSplineSegmentBezierQuadratic(p1 Vector2, c2 Vector2, p3 Vector2, thick f32, color Color)
 
 // Draw spline segment: Cubic Bezier, 2 points, 2 control points
-fn C.DrawSplineSegmentBezierCubic(p1 Vector2, c2 Vector2, c3 Vector2, p4 Vector2, thick f32, color Color)
+pub fn C.DrawSplineSegmentBezierCubic(p1 Vector2, c2 Vector2, c3 Vector2, p4 Vector2, thick f32, color Color)
 
 // Spline segment point evaluation functions, for a given t [0.0f .. 1.0f]
 
 // Get (evaluate) spline point: Linear
-fn C.GetSplinePointLinear(startPos Vector2, endPos Vector2, t f32) Vector2
+pub fn C.GetSplinePointLinear(startPos Vector2, endPos Vector2, t f32) Vector2
 
 // Get (evaluate) spline point: B-Spline
-fn C.GetSplinePointBasis(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, t f32) Vector2
+pub fn C.GetSplinePointBasis(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, t f32) Vector2
 
 // Get (evaluate) spline point: Catmull-Rom
-fn C.GetSplinePointCatmullRom(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, t f32) Vector2
+pub fn C.GetSplinePointCatmullRom(p1 Vector2, p2 Vector2, p3 Vector2, p4 Vector2, t f32) Vector2
 
 // Get (evaluate) spline point: Quadratic Bezier
-fn C.GetSplinePointBezierQuad(p1 Vector2, c2 Vector2, p3 Vector2, t f32) Vector2
+pub fn C.GetSplinePointBezierQuad(p1 Vector2, c2 Vector2, p3 Vector2, t f32) Vector2
 
 // Get (evaluate) spline point: Cubic Bezier
-fn C.GetSplinePointBezierCubic(p1 Vector2, c2 Vector2, c3 Vector2, p4 Vector2, t f32) Vector2
+pub fn C.GetSplinePointBezierCubic(p1 Vector2, c2 Vector2, c3 Vector2, p4 Vector2, t f32) Vector2
 
 // Basic shapes collision detection functions
 
 // Check collision between two rectangles
-fn C.CheckCollisionRecs(rec1 Rectangle, rec2 Rectangle) bool
+pub fn C.CheckCollisionRecs(rec1 Rectangle, rec2 Rectangle) bool
 
 // Check collision between two circles
-fn C.CheckCollisionCircles(center1 Vector2, radius1 f32, center2 Vector2, radius2 f32) bool
+pub fn C.CheckCollisionCircles(center1 Vector2, radius1 f32, center2 Vector2, radius2 f32) bool
 
 // Check collision between circle and rectangle
-fn C.CheckCollisionCircleRec(center Vector2, radius f32, rec Rectangle) bool
+pub fn C.CheckCollisionCircleRec(center Vector2, radius f32, rec Rectangle) bool
 
 // Check if point is inside rectangle
-fn C.CheckCollisionPointRec(point Vector2, rec Rectangle) bool
+pub fn C.CheckCollisionPointRec(point Vector2, rec Rectangle) bool
 
 // Check if point is inside circle
-fn C.CheckCollisionPointCircle(point Vector2, center Vector2, radius f32) bool
+pub fn C.CheckCollisionPointCircle(point Vector2, center Vector2, radius f32) bool
 
 // Check if point is inside a triangle
-fn C.CheckCollisionPointTriangle(point Vector2, p1 Vector2, p2 Vector2, p3 Vector2) bool
+pub fn C.CheckCollisionPointTriangle(point Vector2, p1 Vector2, p2 Vector2, p3 Vector2) bool
 
 // Check if point is within a polygon described by array of vertices
-fn C.CheckCollisionPointPoly(point Vector2, points &Vector2, pointCount int) bool
+pub fn C.CheckCollisionPointPoly(point Vector2, points &Vector2, pointCount int) bool
 
 // Check the collision between two lines defined by two points each, returns collision point by reference
-fn C.CheckCollisionLines(startPos1 Vector2, endPos1 Vector2, startPos2 Vector2, endPos2 Vector2, collisionPoint &Vector2) bool
+pub fn C.CheckCollisionLines(startPos1 Vector2, endPos1 Vector2, startPos2 Vector2, endPos2 Vector2, collisionPoint &Vector2) bool
 
 // Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
-fn C.CheckCollisionPointLine(point Vector2, p1 Vector2, p2 Vector2, threshold int) bool
+pub fn C.CheckCollisionPointLine(point Vector2, p1 Vector2, p2 Vector2, threshold int) bool
 
 // Get collision rectangle for two rectangles collision
-fn C.GetCollisionRec(rec1 Rectangle, rec2 Rectangle) Rectangle
+pub fn C.GetCollisionRec(rec1 Rectangle, rec2 Rectangle) Rectangle
 
 //------------------------------------------------------------------------------------
 // Texture Loading and Drawing Functions (Module: textures)
@@ -2288,368 +2318,368 @@ fn C.GetCollisionRec(rec1 Rectangle, rec2 Rectangle) Rectangle
 // NOTE: These functions do not require GPU access
 
 // Load image from file into CPU memory (RAM)
-fn C.LoadImage(const_fileName &char) Image
+pub fn C.LoadImage(const_fileName &char) Image
 
 // Load image from RAW file data
-fn C.LoadImageRaw(const_fileName &char, width int, height int, format int, headerSize int) Image
+pub fn C.LoadImageRaw(const_fileName &char, width int, height int, format int, headerSize int) Image
 
 // Load image from SVG file data or string with specified size
-fn C.LoadImageSvg(const_fileNameOrString &char, width int, height int) Image
+pub fn C.LoadImageSvg(const_fileNameOrString &char, width int, height int) Image
 
 // Load image sequence from file (frames appended to image.data)
-fn C.LoadImageAnim(const_fileName &char, frames &int) Image
+pub fn C.LoadImageAnim(const_fileName &char, frames &int) Image
 
-// Load image from memory buffer, fileType refers to extension: i.e. '.png'
-fn C.LoadImageFromMemory(const_fileType &char, const_fileData &u8, dataSize int) Image
+// Load image from memory buffer, filepub type refers to extension: i.e. '.png'
+pub fn C.LoadImageFromMemory(const_filepub type, &char, const_fileData &u8, dataSize int) Image
 
 // Load image from GPU texture data
-fn C.LoadImageFromTexture(texture Texture2D) Image
+pub fn C.LoadImageFromTexture(texture Texture2D) Image
 
 // Load image from screen buffer and (screenshot)
-fn C.LoadImageFromScreen() Image
+pub fn C.LoadImageFromScreen() Image
 
 // Check if an image is ready
-fn C.IsImageReady(image Image) bool
+pub fn C.IsImageReady(image Image) bool
 
 // Unload image from CPU memory (RAM)
-fn C.UnloadImage(image Image)
+pub fn C.UnloadImage(image Image)
 
 // Export image data to file, returns true on success
-fn C.ExportImage(image Image, const_fileName &char) bool
+pub fn C.ExportImage(image Image, const_fileName &char) bool
 
 // Export image to memory buffer
-fn C.ExportImageToMemory(image Image, const_fileType &char, fileSize &int) &u8
+pub fn C.ExportImageToMemory(image Image, const_filepub type, &char, fileSize &int) &u8
 
 // Export image as code file defining an array of bytes, returns true on success
-fn C.ExportImageAsCode(image Image, const_fileName &char) bool
+pub fn C.ExportImageAsCode(image Image, const_fileName &char) bool
 
 // Image generation functions
 
 // Generate image: plain color
-fn C.GenImageColor(width int, height int, color Color) Image
+pub fn C.GenImageColor(width int, height int, color Color) Image
 
 // Generate image: linear gradient, direction in degrees [0..360], 0=Vertical gradient
-fn C.GenImageGradientLinear(width int, height int, direction int, start Color, end Color) Image
+pub fn C.GenImageGradientLinear(width int, height int, direction int, start Color, end Color) Image
 
 // Generate image: radial gradient
-fn C.GenImageGradientRadial(width int, height int, density f32, inner Color, outer Color) Image
+pub fn C.GenImageGradientRadial(width int, height int, density f32, inner Color, outer Color) Image
 
 // Generate image: square gradient
-fn C.GenImageGradientSquare(width int, height int, density f32, inner Color, outer Color) Image
+pub fn C.GenImageGradientSquare(width int, height int, density f32, inner Color, outer Color) Image
 
 // Generate image: checked
-fn C.GenImageWhiteNoise(width int, height int, factor f32) Image
+pub fn C.GenImageWhiteNoise(width int, height int, factor f32) Image
 
 // Generate image: white noise
-fn C.GenImagePerlinNoise(width int, height int, offsetX int, offsetY int, f32 scale) Image
+pub fn C.GenImagePerlinNoise(width int, height int, offsetX int, offsetY int, f32 scale) Image
 
 // Generate image: perlin noise
-fn C.GenImageChecked(width int, height int, checksX int, checksY int, col1 Color, col2 Color) Image
+pub fn C.GenImageChecked(width int, height int, checksX int, checksY int, col1 Color, col2 Color) Image
 
 // Generate image: cellular algorithm, bigger tileSize means bigger cells
-fn C.GenImageCellular(width int, height int, tileSize int) Image
+pub fn C.GenImageCellular(width int, height int, tileSize int) Image
 
 // Generate image: grayscale image from text data
-fn C.GenImageText(width int, height int, const_text &char) Image
+pub fn C.GenImageText(width int, height int, const_text &char) Image
 
 // Image manipulation functions
 
 // Create an image duplicate (useful for transformations)
-fn C.ImageCopy(image Image) Image
+pub fn C.ImageCopy(image Image) Image
 
 // Create an image from another image piece
-fn C.ImageFromImage(image Image, rec Rectangle) Image
+pub fn C.ImageFromImage(image Image, rec Rectangle) Image
 
 // Create an image from text (default font)
-fn C.ImageText(const_text &char, fontSize int, color Color) Image
+pub fn C.ImageText(const_text &char, fontSize int, color Color) Image
 
 // Create an image from text (custom sprite font)
-fn C.ImageTextEx(font Font, const_text &char, fontSize f32, spacing f32, tint Color) Image
+pub fn C.ImageTextEx(font Font, const_text &char, fontSize f32, spacing f32, tint Color) Image
 
 // Convert image data to desired format
-fn C.ImageFormat(image &Image, newFormat int)
+pub fn C.ImageFormat(image &Image, newFormat int)
 
 // Convert image to POT (power-of-two)
-fn C.ImageToPOT(image &Image, fill Color)
+pub fn C.ImageToPOT(image &Image, fill Color)
 
 // Crop an image to a defined rectangle
-fn C.ImageCrop(image &Image, crop Rectangle)
+pub fn C.ImageCrop(image &Image, crop Rectangle)
 
 // Crop image depending on alpha value
-fn C.ImageAlphaCrop(image &Image, threshold f32)
+pub fn C.ImageAlphaCrop(image &Image, threshold f32)
 
 // Clear alpha channel to desired color
-fn C.ImageAlphaClear(image &Image, color Color, threshold f32)
+pub fn C.ImageAlphaClear(image &Image, color Color, threshold f32)
 
 // Apply alpha mask to image
-fn C.ImageAlphaMask(image &Image, alphaMask Image)
+pub fn C.ImageAlphaMask(image &Image, alphaMask Image)
 
 // Premultiply alpha channel
-fn C.ImageAlphaPremultiply(image &Image)
+pub fn C.ImageAlphaPremultiply(image &Image)
 
 // Apply Gaussian blur using a box blur approximation
-fn C.ImageBlurGaussian(image &Image, blurSize int)
+pub fn C.ImageBlurGaussian(image &Image, blurSize int)
 
 // Resize image (Bicubic scaling algorithm)
-fn C.ImageResize(image &Image, newWidth int, newHeight int)
+pub fn C.ImageResize(image &Image, newWidth int, newHeight int)
 
 // Resize image (Nearest-Neighbor scaling algorithm)
-fn C.ImageResizeNN(image &Image, newWidth int, newHeight int)
+pub fn C.ImageResizeNN(image &Image, newWidth int, newHeight int)
 
 // Resize canvas and fill with color
-fn C.ImageResizeCanvas(image &Image, newWidth int, newHeight int, offsetX int, offsetY int, fill Color)
+pub fn C.ImageResizeCanvas(image &Image, newWidth int, newHeight int, offsetX int, offsetY int, fill Color)
 
 // Compute all mipmap levels for a provided image
-fn C.ImageMipmaps(image &Image)
+pub fn C.ImageMipmaps(image &Image)
 
 // Dither image data to 16bpp or lower (Floyd-Steinberg dithering)
-fn C.ImageDither(image &Image, rBpp int, gBpp int, bBpp int, aBpp int)
+pub fn C.ImageDither(image &Image, rBpp int, gBpp int, bBpp int, aBpp int)
 
 // Flip image vertically
-fn C.ImageFlipVertical(image &Image)
+pub fn C.ImageFlipVertical(image &Image)
 
 // Flip image horizontally
-fn C.ImageFlipHorizontal(image &Image)
+pub fn C.ImageFlipHorizontal(image &Image)
 
 // Rotate image by input angle in degrees (-359 to 359)
-fn C.ImageRotate(image &Image, degrees int)
+pub fn C.ImageRotate(image &Image, degrees int)
 
 // Rotate image clockwise 90deg
-fn C.ImageRotateCW(image &Image)
+pub fn C.ImageRotateCW(image &Image)
 
 // Rotate image counter-clockwise 90deg
-fn C.ImageRotateCCW(image &Image)
+pub fn C.ImageRotateCCW(image &Image)
 
 // Modify image color: tint
-fn C.ImageColorTint(image &Image, color Color)
+pub fn C.ImageColorTint(image &Image, color Color)
 
 // Modify image color: invert
-fn C.ImageColorInvert(image &Image)
+pub fn C.ImageColorInvert(image &Image)
 
 // Modify image color: grayscale
-fn C.ImageColorGrayscale(image &Image)
+pub fn C.ImageColorGrayscale(image &Image)
 
 // Modify image color: contrast (-100 to 100)
-fn C.ImageColorContrast(image &Image, contrast f32)
+pub fn C.ImageColorContrast(image &Image, contrast f32)
 
 // Modify image color: brightness (-255 to 255)
-fn C.ImageColorBrightness(image &Image, brightness int)
+pub fn C.ImageColorBrightness(image &Image, brightness int)
 
 // Modify image color: replace color
-fn C.ImageColorReplace(image &Image, color Color, replace Color)
+pub fn C.ImageColorReplace(image &Image, color Color, replace Color)
 
 // Load color data from image as a Color array (RGBA - 32bit)
-fn C.LoadImageColors(image Image) &Color
+pub fn C.LoadImageColors(image Image) &Color
 
 // Load colors palette from image as a Color array (RGBA - 32bit)
-fn C.LoadImagePalette(image Image, maxPaletteSize int, colorCount &int) &Color
+pub fn C.LoadImagePalette(image Image, maxPaletteSize int, colorCount &int) &Color
 
 // Unload color data loaded with LoadImageColors()
-fn C.UnloadImageColors(colors &Color)
+pub fn C.UnloadImageColors(colors &Color)
 
 // Unload colors palette loaded with LoadImagePalette()
-fn C.UnloadImagePalette(colors &Color)
+pub fn C.UnloadImagePalette(colors &Color)
 
 // Get image alpha border rectangle
-fn C.GetImageAlphaBorder(image Image, threshold f32) Rectangle
+pub fn C.GetImageAlphaBorder(image Image, threshold f32) Rectangle
 
 // Get image pixel color at (x, y) position
-fn C.GetImageColor(image Image, x int, y int) Color
+pub fn C.GetImageColor(image Image, x int, y int) Color
 
 // Image drawing functions
 // NOTE: Image software-rendering functions (CPU)
 
 // Clear image background with given color
-fn C.ImageClearBackground(dst &Image, color Color)
+pub fn C.ImageClearBackground(dst &Image, color Color)
 
 // Draw pixel within an image
-fn C.ImageDrawPixel(dst &Image, posX int, posY int, color Color)
+pub fn C.ImageDrawPixel(dst &Image, posX int, posY int, color Color)
 
 // Draw pixel within an image (Vector version)
-fn C.ImageDrawPixelV(dst &Image, position Vector2, color Color)
+pub fn C.ImageDrawPixelV(dst &Image, position Vector2, color Color)
 
 // Draw line within an image
-fn C.ImageDrawLine(dst &Image, startPosX int, startPosY int, endPosX int, endPosY int, color Color)
+pub fn C.ImageDrawLine(dst &Image, startPosX int, startPosY int, endPosX int, endPosY int, color Color)
 
 // Draw line within an image (Vector version)
-fn C.ImageDrawLineV(dst &Image, start Vector2, end Vector2, color Color)
+pub fn C.ImageDrawLineV(dst &Image, start Vector2, end Vector2, color Color)
 
 // Draw a filled circle within an image
-fn C.ImageDrawCircle(dst &Image, centerX int, centerY int, radius int, color Color)
+pub fn C.ImageDrawCircle(dst &Image, centerX int, centerY int, radius int, color Color)
 
 // Draw a filled circle within an image (Vector version)
-fn C.ImageDrawCircleV(dst &Image, center Vector2, radius int, color Color)
+pub fn C.ImageDrawCircleV(dst &Image, center Vector2, radius int, color Color)
 
 // Draw circle outline within an image
-fn C.ImageDrawCircleLines(dst &Image, centerX int, centerY int, radius int, color Color)
+pub fn C.ImageDrawCircleLines(dst &Image, centerX int, centerY int, radius int, color Color)
 
 // Draw circle outline within an image (Vector version)
-fn C.ImageDrawCircleLinesV(dst &Image, center Vector2, radius int, color Color)
+pub fn C.ImageDrawCircleLinesV(dst &Image, center Vector2, radius int, color Color)
 
 // Draw rectangle within an image
-fn C.ImageDrawRectangle(dst &Image, posX int, posY int, width int, height int, color Color)
+pub fn C.ImageDrawRectangle(dst &Image, posX int, posY int, width int, height int, color Color)
 
 // Draw rectangle within an image (Vector version)
-fn C.ImageDrawRectangleV(dst &Image, position Vector2, size Vector2, color Color)
+pub fn C.ImageDrawRectangleV(dst &Image, position Vector2, size Vector2, color Color)
 
 // Draw rectangle within an image
-fn C.ImageDrawRectangleRec(dst &Image, rec Rectangle, color Color)
+pub fn C.ImageDrawRectangleRec(dst &Image, rec Rectangle, color Color)
 
 // Draw rectangle lines within an image
-fn C.ImageDrawRectangleLines(dst &Image, rec Rectangle, thick int, color Color)
+pub fn C.ImageDrawRectangleLines(dst &Image, rec Rectangle, thick int, color Color)
 
 // Draw a source image within a destination image (tint applied to source)
-fn C.ImageDraw(dst &Image, src Image, srcRec Rectangle, dstRec Rectangle, tint Color)
+pub fn C.ImageDraw(dst &Image, src Image, srcRec Rectangle, dstRec Rectangle, tint Color)
 
 // Draw text (using default font) within an image (destination)
-fn C.ImageDrawText(dst &Image, const_text &char, posX int, posY int, fontSize int, color Color)
+pub fn C.ImageDrawText(dst &Image, const_text &char, posX int, posY int, fontSize int, color Color)
 
 // Draw text (custom sprite font) within an image (destination)
-fn C.ImageDrawTextEx(dst &Image, font Font, const_text &char, position Vector2, fontSize f32, spacing f32, tint Color)
+pub fn C.ImageDrawTextEx(dst &Image, font Font, const_text &char, position Vector2, fontSize f32, spacing f32, tint Color)
 
 // Texture loading functions
 // NOTE: These functions require GPU access
 
 // Load texture from file into GPU memory (VRAM)
-fn C.LoadTexture(const_fileName &char) Texture2D
+pub fn C.LoadTexture(const_fileName &char) Texture2D
 
 // Load texture from image data
-fn C.LoadTextureFromImage(image Image) Texture2D
+pub fn C.LoadTextureFromImage(image Image) Texture2D
 
 // Load cubemap from image, multiple image cubemap layouts supported
-fn C.LoadTextureCubemap(image Image, layout int) TextureCubemap
+pub fn C.LoadTextureCubemap(image Image, layout int) TextureCubemap
 
 // Load texture for rendering (framebuffer)
-fn C.LoadRenderTexture(width int, height int) RenderTexture2D
+pub fn C.LoadRenderTexture(width int, height int) RenderTexture2D
 
 // Check if a texture is ready
-fn C.IsTextureReady(texture Texture2D) bool
+pub fn C.IsTextureReady(texture Texture2D) bool
 
 // Unload texture from GPU memory (VRAM)
-fn C.UnloadTexture(texture Texture2D)
+pub fn C.UnloadTexture(texture Texture2D)
 
 // Check if a render texture is ready
-fn C.IsRenderTextureReady(target RenderTexture2D) bool
+pub fn C.IsRenderTextureReady(target RenderTexture2D) bool
 
 // Unload render texture from GPU memory (VRAM)
-fn C.UnloadRenderTexture(target RenderTexture2D)
+pub fn C.UnloadRenderTexture(target RenderTexture2D)
 
 // Update GPU texture with new data
-fn C.UpdateTexture(texture Texture2D, const_pixels voidptr)
+pub fn C.UpdateTexture(texture Texture2D, const_pixels voidptr)
 
 // Update GPU texture rectangle with new data
-fn C.UpdateTextureRec(texture Texture2D, rec Rectangle, const_pixels voidptr)
+pub fn C.UpdateTextureRec(texture Texture2D, rec Rectangle, const_pixels voidptr)
 
 // Texture configuration functions
 
 // Generate GPU mipmaps for a texture
-fn C.GenTextureMipmaps(texture &Texture2D)
+pub fn C.GenTextureMipmaps(texture &Texture2D)
 
 // Set texture scaling filter mode
-fn C.SetTextureFilter(texture Texture2D, filter int)
+pub fn C.SetTextureFilter(texture Texture2D, filter int)
 
 // Set texture wrapping mode
-fn C.SetTextureWrap(texture Texture2D, wrap int)
+pub fn C.SetTextureWrap(texture Texture2D, wrap int)
 
 // Texture drawing functions
 
 // Draw a Texture2D
-fn C.DrawTexture(texture Texture2D, posX int, posY int, tint Color)
+pub fn C.DrawTexture(texture Texture2D, posX int, posY int, tint Color)
 
 // Draw a Texture2D with position defined as Vector2
-fn C.DrawTextureV(texture Texture2D, position Vector2, tint Color)
+pub fn C.DrawTextureV(texture Texture2D, position Vector2, tint Color)
 
 // Draw a Texture2D with extended parameters
-fn C.DrawTextureEx(texture Texture2D, position Vector2, rotation f32, f32 scale, tint Color)
+pub fn C.DrawTextureEx(texture Texture2D, position Vector2, rotation f32, f32 scale, tint Color)
 
 // Draw a part of a texture defined by a rectangle
-fn C.DrawTextureRec(texture Texture2D, source Rectangle, position Vector2, tint Color)
+pub fn C.DrawTextureRec(texture Texture2D, source Rectangle, position Vector2, tint Color)
 
 // Draw a part of a texture defined by a rectangle with 'pro' parameters
-fn C.DrawTexturePro(texture Texture2D, source Rectangle, dest Rectangle, origin Vector2, rotation f32, tint Color)
+pub fn C.DrawTexturePro(texture Texture2D, source Rectangle, dest Rectangle, origin Vector2, rotation f32, tint Color)
 
 // Draws a texture (or part of it) that stretches or shrinks nicely
-fn C.DrawTextureNPatch(texture Texture2D, nPatchInfo NPatchInfo, dest Rectangle, origin Vector2, rotation f32, tint Color)
+pub fn C.DrawTextureNPatch(texture Texture2D, nPatchInfo NPatchInfo, dest Rectangle, origin Vector2, rotation f32, tint Color)
 
 // Color/pixel related functions
 
 // Get color with alpha applied, alpha goes from 0.0f to 1.0f
-fn C.Fade(color Color, alpha f32) Color
+pub fn C.Fade(color Color, alpha f32) Color
 
 // Get hexadecimal value for a Color
-fn C.ColorToInt(color Color) int
+pub fn C.ColorToInt(color Color) int
 
 // Get Color normalized as f32 [0..1]
-fn C.ColorNormalize(color Color) Vector4
+pub fn C.ColorNormalize(color Color) Vector4
 
 // Get Color from normalized values [0..1]
-fn C.ColorFromNormalized(normalized Vector4) Color
+pub fn C.ColorFromNormalized(normalized Vector4) Color
 
 // Get HSV values for a Color, hue [0..360], saturation/value [0..1]
-fn C.ColorToHSV(color Color) Vector3
+pub fn C.ColorToHSV(color Color) Vector3
 
 // Get a Color from HSV values, hue [0..360], saturation/value [0..1]
-fn C.ColorFromHSV(hue f32, saturation f32, value f32) Color
+pub fn C.ColorFromHSV(hue f32, saturation f32, value f32) Color
 
 // Get color multiplied with another color
-fn C.ColorTint(color Color, tint Color) Color
+pub fn C.ColorTint(color Color, tint Color) Color
 
 // Get color with brightness correction, brightness factor goes from -1.0f to 1.0f
-fn C.ColorBrightness(color Color, factor f32) Color
+pub fn C.ColorBrightness(color Color, factor f32) Color
 
 // Get color with contrast correction, contrast values between -1.0f and 1.0f
-fn C.ColorContrast(color Color, contrast f32) Color
+pub fn C.ColorContrast(color Color, contrast f32) Color
 
 // Get color with alpha applied, alpha goes from 0.0f to 1.0f
-fn C.ColorAlpha(color Color, alpha f32) Color
+pub fn C.ColorAlpha(color Color, alpha f32) Color
 
 // Get src alpha-blended into dst color with tint
-fn C.ColorAlphaBlend(dst Color, src Color, tint Color) Color
+pub fn C.ColorAlphaBlend(dst Color, src Color, tint Color) Color
 
 // Get Color structure from hexadecimal value
-fn C.GetColor(hexValue u32) Color
+pub fn C.GetColor(hexValue u32) Color
 
 // Get Color from a source pixel pointer of certain format
-fn C.GetPixelColor(srcPtr voidptr, format int) Color
+pub fn C.GetPixelColor(srcPtr voidptr, format int) Color
 
 // Set color formatted into destination pixel pointer
-fn C.SetPixelColor(dstPtr voidptr, color Color, format int)
+pub fn C.SetPixelColor(dstPtr voidptr, color Color, format int)
 
 // Get pixel data size in bytes for certain format
-fn C.GetPixelDataSize(width int, height int, format int) int
+pub fn C.GetPixelDataSize(width int, height int, format int) int
 
 // Get the default Font
-fn C.GetFontDefault() Font
+pub fn C.GetFontDefault() Font
 
 // Load font from file into GPU memory (VRAM)
-fn C.LoadFont(const_fileName &char) Font
+pub fn C.LoadFont(const_fileName &char) Font
 
 // Load font from file with extended parameters, use NULL for codepoints and 0 for codepointCount to load the default character set
-fn C.LoadFontEx(const_fileName &char, fontSize int, codepoints &int, codepointCount int) Font
+pub fn C.LoadFontEx(const_fileName &char, fontSize int, codepoints &int, codepointCount int) Font
 
 // Load font from Image (XNA style)
-fn C.LoadFontFromImage(image Image, key Color, firstChar int) Font
+pub fn C.LoadFontFromImage(image Image, key Color, firstChar int) Font
 
-// Load font from memory buffer, fileType refers to extension: i.e. '.ttf'
-fn C.LoadFontFromMemory(const_fileType &char, const_fileData &u8, dataSize int, fontSize int, codepoints &int, codepointCount int) Font
+// Load font from memory buffer, filepub type refers to extension: i.e. '.ttf'
+pub fn C.LoadFontFromMemory(const_filepub type, &char, const_fileData &u8, dataSize int, fontSize int, codepoints &int, codepointCount int) Font
 
 // Check if a font is ready
-fn C.IsFontReady(font Font) bool
+pub fn C.IsFontReady(font Font) bool
 
 // Load font data for further use
-fn C.LoadFontData(const_fileData &u8, dataSize int, fontSize int, codepoints &int, codepointCount int, type, int) &GlyphInfo
+pub fn C.LoadFontData(const_fileData &u8, dataSize int, fontSize int, codepoints &int, codepointCount int, type, int) &GlyphInfo
 
 // Generate image font atlas using chars info
-fn C.GenImageFontAtlas(const_glyphs &GlyphInfo, glyphRecs &&Rectangle, glyphCount int, fontSize int, padding int, packMethod int) Image
+pub fn C.GenImageFontAtlas(const_glyphs &GlyphInfo, glyphRecs &&Rectangle, glyphCount int, fontSize int, padding int, packMethod int) Image
 
 // Unload font chars info data (RAM)
-fn C.UnloadFontData(glyphs &GlyphInfo, glyphCount int)
+pub fn C.UnloadFontData(glyphs &GlyphInfo, glyphCount int)
 
 // Unload font from GPU memory (VRAM)
-fn C.UnloadFont(font Font)
+pub fn C.UnloadFont(font Font)
 
 // Export font as code file, returns true on success
-fn C.ExportFontAsCode(font Font, const_fileName &char) bool
+pub fn C.ExportFontAsCode(font Font, const_fileName &char) bool
 
 //------------------------------------------------------------------------------------
 // Font Loading and Text Drawing Functions (Module: text)
@@ -2660,119 +2690,119 @@ fn C.ExportFontAsCode(font Font, const_fileName &char) bool
 // Text drawing functions
 
 // Draw current FPS
-fn C.DrawFPS(posX int, posY int)
+pub fn C.DrawFPS(posX int, posY int)
 
 // Draw text (using default font)
-fn C.DrawText(const_text &char, posX int, posY int, fontSize int, color Color)
+pub fn C.DrawText(const_text &char, posX int, posY int, fontSize int, color Color)
 
 // Draw text using font and additional parameters
-fn C.DrawTextEx(font Font, const_text &char, position Vector2, fontSize f32, spacing f32, tint Color)
+pub fn C.DrawTextEx(font Font, const_text &char, position Vector2, fontSize f32, spacing f32, tint Color)
 
 // Draw text using Font and pro parameters (rotation)
-fn C.DrawTextPro(font Font, const_text &char, position Vector2, origin Vector2, rotation f32, fontSize f32, spacing f32, tint Color)
+pub fn C.DrawTextPro(font Font, const_text &char, position Vector2, origin Vector2, rotation f32, fontSize f32, spacing f32, tint Color)
 
 // Draw one character (codepoint)
-fn C.DrawTextCodepoint(font Font, codepoint int, position Vector2, fontSize f32, tint Color)
+pub fn C.DrawTextCodepoint(font Font, codepoint int, position Vector2, fontSize f32, tint Color)
 
 // Draw multiple character (codepoint)
-fn C.DrawTextCodepoints(font Font, const_codepoints &int, codepointCount int, position Vector2, fontSize f32, spacing f32, tint Color)
+pub fn C.DrawTextCodepoints(font Font, const_codepoints &int, codepointCount int, position Vector2, fontSize f32, spacing f32, tint Color)
 
 // Text font info functions
 
 // Set vertical line spacing when drawing with line-breaks
-fn C.SetTextLineSpacing(spacing int)
+pub fn C.SetTextLineSpacing(spacing int)
 
 // Measure string width for default font
-fn C.MeasureText(const_text &char, fontSize int) int
+pub fn C.MeasureText(const_text &char, fontSize int) int
 
 // Measure string size for Font
-fn C.MeasureTextEx(font Font, const_text &char, fontSize f32, spacing f32) Vector2
+pub fn C.MeasureTextEx(font Font, const_text &char, fontSize f32, spacing f32) Vector2
 
 // Get glyph index position in font for a codepoint (unicode character), fallback to '?' if not found
-fn C.GetGlyphIndex(font Font, codepoint int) int
+pub fn C.GetGlyphIndex(font Font, codepoint int) int
 
 // Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
-fn C.GetGlyphInfo(font Font, codepoint int) GlyphInfo
+pub fn C.GetGlyphInfo(font Font, codepoint int) GlyphInfo
 
 // Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
-fn C.GetGlyphAtlasRec(font Font, codepoint int) Rectangle
+pub fn C.GetGlyphAtlasRec(font Font, codepoint int) Rectangle
 
 // Text codepoints management functions (unicode characters)
 
 // Load UTF-8 text encoded from codepoints array
-fn C.LoadUTF8(const_codepoints &int, length int) &char
+pub fn C.LoadUTF8(const_codepoints &int, length int) &char
 
 // Unload UTF-8 text encoded from codepoints array
-fn C.UnloadUTF8(text &char)
+pub fn C.UnloadUTF8(text &char)
 
 // Load all codepoints from a UTF-8 text string, codepoints count returned by parameter
-fn C.LoadCodepoints(const_text &char, count &int) &int
+pub fn C.LoadCodepoints(const_text &char, count &int) &int
 
 // Unload codepoints data from memory
-fn C.UnloadCodepoints(codepoints &int)
+pub fn C.UnloadCodepoints(codepoints &int)
 
 // Get total number of codepoints in a UTF-8 encoded string
-fn C.GetCodepointCount(const_text &char) int
+pub fn C.GetCodepointCount(const_text &char) int
 
 // Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-fn C.GetCodepoint(const_text &char, codepointSize &int) int
+pub fn C.GetCodepoint(const_text &char, codepointSize &int) int
 
 // Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-fn C.GetCodepointNext(const_text &char, codepointSize &int) int
+pub fn C.GetCodepointNext(const_text &char, codepointSize &int) int
 
 // Get previous codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-fn C.GetCodepointPrevious(const_text &char, codepointSize &int) int
+pub fn C.GetCodepointPrevious(const_text &char, codepointSize &int) int
 
 // Encode one codepoint into UTF-8 byte array (array length returned as parameter)
-fn C.CodepointToUTF8(codepoint int, utf8Size &int) &char
+pub fn C.CodepointToUTF8(codepoint int, utf8Size &int) &char
 
 // Text strings management functions (no UTF-8 strings, only byte chars)
 // NOTE: Some strings allocate memory internally for returned strings, just be careful!
 
 // Copy one string to another, returns bytes copied
-fn C.TextCopy(dst &char, const_src &char) int
+pub fn C.TextCopy(dst &char, const_src &char) int
 
 // Check if two text string are equal
-fn C.TextIsEqual(const_text1 &char, const_text2 &char) bool
+pub fn C.TextIsEqual(const_text1 &char, const_text2 &char) bool
 
 // Get text length, checks for '\0' ending
-fn C.TextLength(const_text &char) u32
+pub fn C.TextLength(const_text &char) u32
 
 // Text formatting with variables (sprintf() style)
-fn C.TextFormat(const_text &char, ...) &char
+pub fn C.TextFormat(const_text &char, ...) &char
 
 // Get a piece of a text string
-fn C.TextSubtext(const_text &char, position int, length int) &char
+pub fn C.TextSubtext(const_text &char, position int, length int) &char
 
 // Replace text string (WARNING: memory must be freed!)
-fn C.TextReplace(text &char, const_replace &char, const_by &char) &char
+pub fn C.TextReplace(text &char, const_replace &char, const_by &char) &char
 
 // Insert text in a position (WARNING: memory must be freed!)
-fn C.TextInsert(const_text &char, const_insert &char, position int) &char
+pub fn C.TextInsert(const_text &char, const_insert &char, position int) &char
 
 // Join text strings with delimiter
-fn C.TextJoin(const_textList &&char, count int, const_delimiter &char) &char
+pub fn C.TextJoin(const_textList &&char, count int, const_delimiter &char) &char
 
 // Split text into multiple strings
-fn C.TextSplit(const_text &char, delimiter char, count &int) &&char
+pub fn C.TextSplit(const_text &char, delimiter char, count &int) &&char
 
 // Append text at specific position and move cursor!
-fn C.TextAppend(text &char, const_append &char, position &int)
+pub fn C.TextAppend(text &char, const_append &char, position &int)
 
 // Find first text occurrence within a string
-fn C.TextFindIndex(const_text &char, const_find &char) int
+pub fn C.TextFindIndex(const_text &char, const_find &char) int
 
 // Get upper case version of provided string
-fn C.TextToUpper(const_text &char) &char
+pub fn C.TextToUpper(const_text &char) &char
 
 // Get lower case version of provided string
-fn C.TextToLower(const_text &char) &char
+pub fn C.TextToLower(const_text &char) &char
 
 // Get Pascal case notation version of provided string
-fn C.TextToPascal(const_text &char) &char
+pub fn C.TextToPascal(const_text &char) &char
 
 // Get integer value from text (negative values not supported)
-fn C.TextToInteger(const_text &char) int
+pub fn C.TextToInteger(const_text &char) int
 
 //------------------------------------------------------------------------------------
 // Basic 3d Shapes Drawing Functions (Module: models)
@@ -2781,67 +2811,67 @@ fn C.TextToInteger(const_text &char) int
 // Basic geometric 3D shapes drawing functions
 
 // Draw a line in 3D world space
-fn C.DrawLine3D(startPos Vector3, endPos Vector3, color Color)
+pub fn C.DrawLine3D(startPos Vector3, endPos Vector3, color Color)
 
 // Draw a point in 3D space, actually a small line
-fn C.DrawPoint3D(position Vector3, color Color)
+pub fn C.DrawPoint3D(position Vector3, color Color)
 
 // Draw a circle in 3D world space
-fn C.DrawCircle3D(center Vector3, radius f32, rotationAxis Vector3, f32 rotationAngle, color Color)
+pub fn C.DrawCircle3D(center Vector3, radius f32, rotationAxis Vector3, f32 rotationAngle, color Color)
 
 // Draw a color-filled triangle (vertex in counter-clockwise order!)
-fn C.DrawTriangle3D(v1 Vector3, v2 Vector3, v3 Vector3, color Color)
+pub fn C.DrawTriangle3D(v1 Vector3, v2 Vector3, v3 Vector3, color Color)
 
 // Draw a triangle strip defined by points
-fn C.DrawTriangleStrip3D(points &Vector3, pointCount int, color Color)
+pub fn C.DrawTriangleStrip3D(points &Vector3, pointCount int, color Color)
 
 // Draw cube
-fn C.DrawCube(position Vector3, width f32, height f32, length f32, color Color)
+pub fn C.DrawCube(position Vector3, width f32, height f32, length f32, color Color)
 
 // Draw cube (Vector version)
-fn C.DrawCubeV(position Vector3, size Vector3, color Color)
+pub fn C.DrawCubeV(position Vector3, size Vector3, color Color)
 
 // Draw cube wires
-fn C.DrawCubeWires(position Vector3, width f32, height f32, length f32, color Color)
+pub fn C.DrawCubeWires(position Vector3, width f32, height f32, length f32, color Color)
 
 // Draw cube wires (Vector version)
-fn C.DrawCubeWiresV(position Vector3, size Vector3, color Color)
+pub fn C.DrawCubeWiresV(position Vector3, size Vector3, color Color)
 
 // Draw sphere
-fn C.DrawSphere(centerPos Vector3, radius f32, color Color)
+pub fn C.DrawSphere(centerPos Vector3, radius f32, color Color)
 
 // Draw sphere with extended parameters
-fn C.DrawSphereEx(centerPos Vector3, radius f32, rings int, slices int, color Color)
+pub fn C.DrawSphereEx(centerPos Vector3, radius f32, rings int, slices int, color Color)
 
 // Draw sphere wires
-fn C.DrawSphereWires(centerPos Vector3, radius f32, rings int, slices int, color Color)
+pub fn C.DrawSphereWires(centerPos Vector3, radius f32, rings int, slices int, color Color)
 
 // Draw a cylinder/cone
-fn C.DrawCylinder(position Vector3, radiusTop f32, radiusBottom f32, height f32, slices int, color Color)
+pub fn C.DrawCylinder(position Vector3, radiusTop f32, radiusBottom f32, height f32, slices int, color Color)
 
 // Draw a cylinder with base at startPos and top at endPos
-fn C.DrawCylinderEx(startPos Vector3, endPos Vector3, startRadius f32, endRadius f32, sides int, color Color)
+pub fn C.DrawCylinderEx(startPos Vector3, endPos Vector3, startRadius f32, endRadius f32, sides int, color Color)
 
 // Draw a cylinder/cone wires
-fn C.DrawCylinderWires(position Vector3, radiusTop f32, radiusBottom f32, height f32, slices int, color Color)
+pub fn C.DrawCylinderWires(position Vector3, radiusTop f32, radiusBottom f32, height f32, slices int, color Color)
 
 // Draw a cylinder wires with base at startPos and top at endPos
-fn C.DrawCylinderWiresEx(startPos Vector3, endPos Vector3, startRadius f32, endRadius f32, sides int, color Color)
+pub fn C.DrawCylinderWiresEx(startPos Vector3, endPos Vector3, startRadius f32, endRadius f32, sides int, color Color)
 
 // Draw a capsule with the center of its sphere caps at startPos and endPos
-fn C.DrawCapsule(startPos Vector3, endPos Vector3, radius f32, slices int, rings int, color Color)
+pub fn C.DrawCapsule(startPos Vector3, endPos Vector3, radius f32, slices int, rings int, color Color)
 
 // Draw capsule wireframe with the center of its sphere caps at startPos and endPos
-fn C.DrawCapsuleWires(startPos Vector3, endPos Vector3, radius f32, slices int, rings int, color Color)
+pub fn C.DrawCapsuleWires(startPos Vector3, endPos Vector3, radius f32, slices int, rings int, color Color)
 
 // Draw a plane XZ
-fn C.DrawPlane(centerPos Vector3, size Vector2, color Color)
+pub fn C.DrawPlane(centerPos Vector3, size Vector2, color Color)
 
 // Draw a ray line
-fn C.DrawRay(ray Ray, color Color)
+pub fn C.DrawRay(ray Ray, color Color)
 
 // Draw a grid (centered at (0, 0, 0))
-fn C.DrawGrid(slices int, spacing f32)
+pub fn C.DrawGrid(slices int, spacing f32)
 
 //------------------------------------------------------------------------------------
 // Model 3d Loading and Drawing Functions (Module: models)
@@ -2850,379 +2880,379 @@ fn C.DrawGrid(slices int, spacing f32)
 // Model management functions
 
 // Load model from files (meshes and materials)
-fn C.LoadModel(const_fileName &char) Model
+pub fn C.LoadModel(const_fileName &char) Model
 
 // Load model from generated mesh (default material)
-fn C.LoadModelFromMesh(mesh Mesh) Model
+pub fn C.LoadModelFromMesh(mesh Mesh) Model
 
 // Check if a model is ready
-fn C.IsModelReady(model Model) bool
+pub fn C.IsModelReady(model Model) bool
 
 // Unload model (including meshes) from memory (RAM and/or VRAM)
-fn C.UnloadModel(model Model)
+pub fn C.UnloadModel(model Model)
 
 // Compute model bounding box limits (considers all meshes)
-fn C.GetModelBoundingBox(model Model) BoundingBox
+pub fn C.GetModelBoundingBox(model Model) BoundingBox
 
 // Model drawing functions
 
 // Draw a model (with texture if set)
-fn C.DrawModel(model Model, position Vector3, scale f32, tint Color)
+pub fn C.DrawModel(model Model, position Vector3, scale f32, tint Color)
 
 // Draw a model with extended parameters
-fn C.DrawModelEx(model Model, position Vector3, rotationAxis Vector3, rotationAngle f32, scale Vector3, tint Color)
+pub fn C.DrawModelEx(model Model, position Vector3, rotationAxis Vector3, rotationAngle f32, scale Vector3, tint Color)
 
 // Draw a model wires (with texture if set)
-fn C.DrawModelWires(model Model, position Vector3, scale f32, tint Color)
+pub fn C.DrawModelWires(model Model, position Vector3, scale f32, tint Color)
 
 // Draw a model wires (with texture if set) with extended parameters
-fn C.DrawBoundingBox(box BoundingBox, color Color)
+pub fn C.DrawBoundingBox(box BoundingBox, color Color)
 
 // Draw bounding box (wires)
-fn C.DrawModelWiresEx(model Model, position Vector3, rotationAxis Vector3, rotationAngle f32, scale Vector3, tint Color)
+pub fn C.DrawModelWiresEx(model Model, position Vector3, rotationAxis Vector3, rotationAngle f32, scale Vector3, tint Color)
 
 // Draw a billboard texture
-fn C.DrawBillboard(camera Camera, texture Texture2D, position Vector3, f32 size, tint Color)
+pub fn C.DrawBillboard(camera Camera, texture Texture2D, position Vector3, f32 size, tint Color)
 
 // Draw a billboard texture defined by source
-fn C.DrawBillboardRec(camera Camera, texture Texture2D, source Rectangle, position Vector3, size Vector2, tint Color)
+pub fn C.DrawBillboardRec(camera Camera, texture Texture2D, source Rectangle, position Vector3, size Vector2, tint Color)
 
 // Draw a billboard texture defined by source and rotation
-fn C.DrawBillboardPro(camera Camera, texture Texture2D, source Rectangle, position Vector3, up Vector3, size Vector2, origin Vector2, rotation f32, tint Color)
+pub fn C.DrawBillboardPro(camera Camera, texture Texture2D, source Rectangle, position Vector3, up Vector3, size Vector2, origin Vector2, rotation f32, tint Color)
 
 // Mesh management functions
 
 // Upload mesh vertex data in GPU and provide VAO/VBO ids
-fn C.UploadMesh(mesh &Mesh, dynamic bool)
+pub fn C.UploadMesh(mesh &Mesh, dynamic bool)
 
 // Update mesh vertex data in GPU for a specific buffer index
-fn C.UpdateMeshBuffer(mesh Mesh, index int, const_data voidptr, dataSize int, offset int)
+pub fn C.UpdateMeshBuffer(mesh Mesh, index int, const_data voidptr, dataSize int, offset int)
 
 // Unload mesh data from CPU and GPU
-fn C.UnloadMesh(mesh Mesh)
+pub fn C.UnloadMesh(mesh Mesh)
 
 // Draw a 3d mesh with material and transform
-fn C.DrawMesh(mesh Mesh, material Material, Matrix transform)
+pub fn C.DrawMesh(mesh Mesh, material Material, Matrix transform)
 
 // Draw multiple mesh instances with material and different transforms
-fn C.DrawMeshInstanced(mesh Mesh, material Material, const_transforms &Matrix, instances int)
+pub fn C.DrawMeshInstanced(mesh Mesh, material Material, const_transforms &Matrix, instances int)
 
 // Export mesh data to file, returns true on success
-fn C.ExportMesh(mesh Mesh, const_fileName &char) bool
+pub fn C.ExportMesh(mesh Mesh, const_fileName &char) bool
 
 // Compute mesh bounding box limits
-fn C.GetMeshBoundingBox(mesh Mesh) BoundingBox
+pub fn C.GetMeshBoundingBox(mesh Mesh) BoundingBox
 
 // Compute mesh tangents
-fn C.GenMeshTangents(mesh &Mesh)
+pub fn C.GenMeshTangents(mesh &Mesh)
 
 // Mesh generation functions
 
 // Generate polygonal mesh
-fn C.GenMeshPoly(sides int, radius f32) Mesh
+pub fn C.GenMeshPoly(sides int, radius f32) Mesh
 
 // Generate plane mesh (with subdivisions)
-fn C.GenMeshPlane(width f32, length f32, resX int, resZ int) Mesh
+pub fn C.GenMeshPlane(width f32, length f32, resX int, resZ int) Mesh
 
 // Generate cuboid mesh
-fn C.GenMeshCube(width f32, height f32, length f32) Mesh
+pub fn C.GenMeshCube(width f32, height f32, length f32) Mesh
 
 // Generate sphere mesh (standard sphere)
-fn C.GenMeshSphere(radius f32, rings int, slices int) Mesh
+pub fn C.GenMeshSphere(radius f32, rings int, slices int) Mesh
 
 // Generate half-sphere mesh (no bottom cap)
-fn C.GenMeshHemiSphere(radius f32, rings int, slices int) Mesh
+pub fn C.GenMeshHemiSphere(radius f32, rings int, slices int) Mesh
 
 // Generate cylinder mesh
-fn C.GenMeshCylinder(radius f32, height f32, slices int) Mesh
+pub fn C.GenMeshCylinder(radius f32, height f32, slices int) Mesh
 
 // Generate cone/pyramid mesh
-fn C.GenMeshCone(radius f32, height f32, slices int) Mesh
+pub fn C.GenMeshCone(radius f32, height f32, slices int) Mesh
 
 // Generate torus mesh
-fn C.GenMeshTorus(radius f32, size f32, radSeg int, sides int) Mesh
+pub fn C.GenMeshTorus(radius f32, size f32, radSeg int, sides int) Mesh
 
 // Generate trefoil knot mesh
-fn C.GenMeshKnot(radius f32, size f32, radSeg int, sides int) Mesh
+pub fn C.GenMeshKnot(radius f32, size f32, radSeg int, sides int) Mesh
 
 // Generate heightmap mesh from image data
-fn C.GenMeshHeightmap(heightmap Image, size Vector3) Mesh
+pub fn C.GenMeshHeightmap(heightmap Image, size Vector3) Mesh
 
 // Generate cubes-based map mesh from image data
-fn C.GenMeshCubicmap(cubicmap Image, cubeSize Vector3) Mesh
+pub fn C.GenMeshCubicmap(cubicmap Image, cubeSize Vector3) Mesh
 
 // Material loading/unloading functions
 
 // Load materials from model file
-fn C.LoadMaterials(const_fileName &char, materialCount &int) &Material
+pub fn C.LoadMaterials(const_fileName &char, materialCount &int) &Material
 
 // Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
-fn C.LoadMaterialDefault() Material
+pub fn C.LoadMaterialDefault() Material
 
 // Check if a material is ready
-fn C.IsMaterialReady(material Material) bool
+pub fn C.IsMaterialReady(material Material) bool
 
 // Unload material from GPU memory (VRAM)
-fn C.UnloadMaterial(material Material)
+pub fn C.UnloadMaterial(material Material)
 
-// Set texture for a material map type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)
-fn C.SetMaterialTexture(material &Materal, mapType int, texture Texture2D)
+// Set texture for a material map pub type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)
+pub fn C.SetMaterialTexture(material &Materal, mappub type, int, texture Texture2D)
 
 // Set material for a mesh
-fn C.SetModelMeshMaterial(model &Model, meshId int, materialId int)
+pub fn C.SetModelMeshMaterial(model &Model, meshId int, materialId int)
 
 // Model animations loading/unloading functions
 
 // Load model animations from file
-fn C.LoadModelAnimations(const_fileName &char, animCount &int) &ModelAnimation
+pub fn C.LoadModelAnimations(const_fileName &char, animCount &int) &ModelAnimation
 
 // Update model animation pose
-fn C.UpdateModelAnimation(model Model, anim ModelAnimation, frame int)
+pub fn C.UpdateModelAnimation(model Model, anim ModelAnimation, frame int)
 
 // Unload animation data
-fn C.UnloadModelAnimation(anim ModelAnimation)
+pub fn C.UnloadModelAnimation(anim ModelAnimation)
 
 // Unload animation array data
-fn C.UnloadModelAnimations(animations &ModelAnimation, animCount int)
+pub fn C.UnloadModelAnimations(animations &ModelAnimation, animCount int)
 
 // Check model animation skeleton match
-fn C.IsModelAnimationValid(model Model, anim ModelAnimation) bool
+pub fn C.IsModelAnimationValid(model Model, anim ModelAnimation) bool
 
 // Collision detection functions
 
 // Check collision between two spheres
-fn C.CheckCollisionSpheres(center1 Vector3, radius1 f32, center2 Vector3, radius2 f32) bool
+pub fn C.CheckCollisionSpheres(center1 Vector3, radius1 f32, center2 Vector3, radius2 f32) bool
 
 // Check collision between two bounding boxes
-fn C.CheckCollisionBoxes(box1 BoundingBox, box2 BoundingBox) bool
+pub fn C.CheckCollisionBoxes(box1 BoundingBox, box2 BoundingBox) bool
 
 // Check collision between box and sphere
-fn C.CheckCollisionBoxSphere(box BoundingBox, center Vector3, radius f32) bool
+pub fn C.CheckCollisionBoxSphere(box BoundingBox, center Vector3, radius f32) bool
 
 // Get collision info between ray and sphere
-fn C.GetRayCollisionSphere(ray Ray, center Vector3, radius f32) RayCollision
+pub fn C.GetRayCollisionSphere(ray Ray, center Vector3, radius f32) RayCollision
 
 // Get collision info between ray and box
-fn C.GetRayCollisionBox(ray Ray, box BoundingBox) RayCollision
+pub fn C.GetRayCollisionBox(ray Ray, box BoundingBox) RayCollision
 
 // Get collision info between ray and mesh
-fn C.GetRayCollisionMesh(ray Ray, mesh Mesh, transform Matrix) RayCollision
+pub fn C.GetRayCollisionMesh(ray Ray, mesh Mesh, transform Matrix) RayCollision
 
 // Get collision info between ray and triangle
-fn C.GetRayCollisionTriangle(ray Ray, p1 Vector3, p2 Vector3, p3 Vector3) RayCollision
+pub fn C.GetRayCollisionTriangle(ray Ray, p1 Vector3, p2 Vector3, p3 Vector3) RayCollision
 
 // Get collision info between ray and quad
-fn C.GetRayCollisionQuad(ray Ray, p1 Vector3, p2 Vector3, p3 Vector3, p4 Vector3) RayCollision
+pub fn C.GetRayCollisionQuad(ray Ray, p1 Vector3, p2 Vector3, p3 Vector3, p4 Vector3) RayCollision
 
 //------------------------------------------------------------------------------------
 // Audio Loading and Playing Functions (Module: audio)
 //------------------------------------------------------------------------------------
-type FnAudioCallback = fn (bufferData voidptr, frames u32)
+pub type FnAudioCallback = fn (bufferData voidptr, frames u32)
 
 // Audio device management functions
 
 // Initialize audio device and context
-fn C.InitAudioDevice()
+pub fn C.InitAudioDevice()
 
 // Close the audio device and context
-fn C.CloseAudioDevice()
+pub fn C.CloseAudioDevice()
 
 // Check if audio device has been initialized successfully
-fn C.IsAudioDeviceReady() bool
+pub fn C.IsAudioDeviceReady() bool
 
 // Set master volume (listener)
-fn C.SetMasterVolume(volume f32)
+pub fn C.SetMasterVolume(volume f32)
 
 // Get master volume (listener)
-fn C.GetMasterVolume() f32
+pub fn C.GetMasterVolume() f32
 
 // Wave/Sound loading/unloading functions
 
 // Load wave data from file
-fn C.LoadWave(const_fileName &char) Wave
+pub fn C.LoadWave(const_fileName &char) Wave
 
-// Load wave from memory buffer, fileType refers to extension: i.e. '.wav'
-fn C.LoadWaveFromMemory(const_fileType &char, const_fileData &u8, dataSize int) Wave
+// Load wave from memory buffer, filepub type refers to extension: i.e. '.wav'
+pub fn C.LoadWaveFromMemory(const_filepub type, &char, const_fileData &u8, dataSize int) Wave
 
 // Checks if wave data is ready
-fn C.IsWaveReady(wave Wave) bool
+pub fn C.IsWaveReady(wave Wave) bool
 
 // Load sound from file
-fn C.LoadSound(const_fileName &char) Sound
+pub fn C.LoadSound(const_fileName &char) Sound
 
 // Load sound from wave data
-fn C.LoadSoundFromWave(wave Wave) Sound
+pub fn C.LoadSoundFromWave(wave Wave) Sound
 
 // Create a new sound that shares the same sample data as the source sound, does not own the sound data
-fn C.LoadSoundAlias(source Sound) Sound
+pub fn C.LoadSoundAlias(source Sound) Sound
 
 // Checks if a sound is ready
-fn C.IsSoundReady(sound Sound) bool
+pub fn C.IsSoundReady(sound Sound) bool
 
 // Update sound buffer with new data
-fn C.UpdateSound(sound Sound, constdata voidptr, int sampleCount)
+pub fn C.UpdateSound(sound Sound, constdata voidptr, int sampleCount)
 
 // Unload wave data
-fn C.UnloadWave(wave Wave)
+pub fn C.UnloadWave(wave Wave)
 
 // Unload sound
-fn C.UnloadSound(sound Sound)
+pub fn C.UnloadSound(sound Sound)
 
 // Unload a sound alias (does not deallocate sample data)
-fn C.UnloadSoundAlias(Sound alias)
+pub fn C.UnloadSoundAlias(Sound alias)
 
 // Export wave data to file, returns true on success
-fn C.ExportWave(wave Wave, const_fileName &char) bool
+pub fn C.ExportWave(wave Wave, const_fileName &char) bool
 
 // Export wave sample data to code (.h), returns true on success
-fn C.ExportWaveAsCode(wave Wave, const_fileName &char) bool
+pub fn C.ExportWaveAsCode(wave Wave, const_fileName &char) bool
 
 // Wave/Sound management functions
 
 // Play a sound
-fn C.PlaySound(sound Sound)
+pub fn C.PlaySound(sound Sound)
 
 // Stop playing a sound
-fn C.StopSound(sound Sound)
+pub fn C.StopSound(sound Sound)
 
 // Pause a sound
-fn C.PauseSound(sound Sound)
+pub fn C.PauseSound(sound Sound)
 
 // Resume a paused sound
-fn C.ResumeSound(sound Sound)
+pub fn C.ResumeSound(sound Sound)
 
 // Check if a sound is currently playing
-fn C.IsSoundPlaying(sound Sound) bool
+pub fn C.IsSoundPlaying(sound Sound) bool
 
 // Set volume for a sound (1.0 is max level)
-fn C.SetSoundVolume(sound Sound, volume f32)
+pub fn C.SetSoundVolume(sound Sound, volume f32)
 
 // Set pitch for a sound (1.0 is base level)
-fn C.SetSoundPitch(sound Sound, pitch f32)
+pub fn C.SetSoundPitch(sound Sound, pitch f32)
 
 // Set pan for a sound (0.5 is center)
-fn C.SetSoundPan(sound Sound, pan f32)
+pub fn C.SetSoundPan(sound Sound, pan f32)
 
 // Copy a wave to a new wave
-fn C.WaveCopy(wave Wave) Wave
+pub fn C.WaveCopy(wave Wave) Wave
 
 // Crop a wave to defined samples range
-fn C.WaveCrop(wave &Wave, int initSample, int finalSample)
+pub fn C.WaveCrop(wave &Wave, int initSample, int finalSample)
 
 // Convert wave data to desired format
-fn C.WaveFormat(wave &Wave, int sampleRate, int sampleSize, int channels)
+pub fn C.WaveFormat(wave &Wave, int sampleRate, int sampleSize, int channels)
 
 // Load samples data from wave as a 32bit f32 data array
-fn C.LoadWaveSamples(wave Wave) &f32
+pub fn C.LoadWaveSamples(wave Wave) &f32
 
 // Unload samples data loaded with LoadWaveSamples()
-fn C.UnloadWaveSamples(samples &f32)
+pub fn C.UnloadWaveSamples(samples &f32)
 
 // Music management functions
 
 // Load music stream from file
-fn C.LoadMusicStream(const_fileName &char) Music
+pub fn C.LoadMusicStream(const_fileName &char) Music
 
 // Load music stream from data
-fn C.LoadMusicStreamFromMemory(const_fileType &char, const_data &u8, dataSize int) Music
+pub fn C.LoadMusicStreamFromMemory(const_filepub type, &char, const_data &u8, dataSize int) Music
 
 // Checks if a music stream is ready
-fn C.IsMusicReady(music Music) bool
+pub fn C.IsMusicReady(music Music) bool
 
 // Unload music stream
-fn C.UnloadMusicStream(music Music)
+pub fn C.UnloadMusicStream(music Music)
 
 // Start music playing
-fn C.PlayMusicStream(music Music)
+pub fn C.PlayMusicStream(music Music)
 
 // Check if music is playing
-fn C.IsMusicStreamPlaying(music Music) bool
+pub fn C.IsMusicStreamPlaying(music Music) bool
 
 // Updates buffers for music streaming
-fn C.UpdateMusicStream(music Music)
+pub fn C.UpdateMusicStream(music Music)
 
 // Stop music playing
-fn C.StopMusicStream(music Music)
+pub fn C.StopMusicStream(music Music)
 
 // Pause music playing
-fn C.PauseMusicStream(music Music)
+pub fn C.PauseMusicStream(music Music)
 
 // Resume playing paused music
-fn C.ResumeMusicStream(music Music)
+pub fn C.ResumeMusicStream(music Music)
 
 // Seek music to a position (in seconds)
-fn C.SeekMusicStream(music Music, position f32)
+pub fn C.SeekMusicStream(music Music, position f32)
 
 // Set volume for music (1.0 is max level)
-fn C.SetMusicVolume(music Music, volume f32)
+pub fn C.SetMusicVolume(music Music, volume f32)
 
 // Set pitch for a music (1.0 is base level)
-fn C.SetMusicPitch(music Music, pitch f32)
+pub fn C.SetMusicPitch(music Music, pitch f32)
 
 // Set pan for a music (0.5 is center)
-fn C.SetMusicPan(music Music, pan f32)
+pub fn C.SetMusicPan(music Music, pan f32)
 
 // Get music time length (in seconds)
-fn C.GetMusicTimeLength(music Music) f32
+pub fn C.GetMusicTimeLength(music Music) f32
 
 // Get current music time played (in seconds)
-fn C.GetMusicTimePlayed(music Music) f32
+pub fn C.GetMusicTimePlayed(music Music) f32
 
 // AudioStream management functions
 
 // Load audio stream (to stream raw audio pcm data)
-fn C.LoadAudioStream(sampleRate u32, sampleSize u32, channels u32) AudioStream
+pub fn C.LoadAudioStream(sampleRate u32, sampleSize u32, channels u32) AudioStream
 
 // Checks if an audio stream is ready
-fn C.IsAudioStreamReady(stream AudioStream) bool
+pub fn C.IsAudioStreamReady(stream AudioStream) bool
 
 // Unload audio stream and free memory
-fn C.UnloadAudioStream(stream AudioStream)
+pub fn C.UnloadAudioStream(stream AudioStream)
 
 // Update audio stream buffers with data
-fn C.UpdateAudioStream(stream AudioStream, const_data voidptr, frameCount int)
+pub fn C.UpdateAudioStream(stream AudioStream, const_data voidptr, frameCount int)
 
 // Check if any audio stream buffers requires refill
-fn C.IsAudioStreamProcessed(stream AudioStream) bool
+pub fn C.IsAudioStreamProcessed(stream AudioStream) bool
 
 // Play audio stream
-fn C.PlayAudioStream(stream AudioStream)
+pub fn C.PlayAudioStream(stream AudioStream)
 
 // Pause audio stream
-fn C.PauseAudioStream(stream AudioStream)
+pub fn C.PauseAudioStream(stream AudioStream)
 
 // Resume audio stream
-fn C.ResumeAudioStream(stream AudioStream)
+pub fn C.ResumeAudioStream(stream AudioStream)
 
 // Check if audio stream is playing
-fn C.IsAudioStreamPlaying(stream AudioStream) bool
+pub fn C.IsAudioStreamPlaying(stream AudioStream) bool
 
 // Stop audio stream
-fn C.StopAudioStream(stream AudioStream)
+pub fn C.StopAudioStream(stream AudioStream)
 
 // Set volume for audio stream (1.0 is max level)
-fn C.SetAudioStreamVolume(stream AudioStream, volume f32)
+pub fn C.SetAudioStreamVolume(stream AudioStream, volume f32)
 
 // Set pitch for audio stream (1.0 is base level)
-fn C.SetAudioStreamPitch(stream AudioStream, pitch f32)
+pub fn C.SetAudioStreamPitch(stream AudioStream, pitch f32)
 
 // Set pan for audio stream (0.5 is centered)
-fn C.SetAudioStreamPan(stream AudioStream, pan f32)
+pub fn C.SetAudioStreamPan(stream AudioStream, pan f32)
 
 // Default size for new audio streams
-fn C.SetAudioStreamBufferSizeDefault(size int)
+pub fn C.SetAudioStreamBufferSizeDefault(size int)
 
 // Audio thread callback to request new data
-fn C.SetAudioStreamCallback(stream AudioStream, callback AudioCallback)
+pub fn C.SetAudioStreamCallback(stream AudioStream, callback AudioCallback)
 
 // Attach audio stream processor to stream, receives the samples as <f32>s
-fn C.AttachAudioStreamProcessor(stream AudioStream, processor AudioCallback)
+pub fn C.AttachAudioStreamProcessor(stream AudioStream, processor AudioCallback)
 
 // Detach audio stream processor from stream
-fn C.DetachAudioStreamProcessor(stream AudioStream, processor AudioCallback)
+pub fn C.DetachAudioStreamProcessor(stream AudioStream, processor AudioCallback)
 
 // Attach audio stream processor to the entire audio pipeline, receives the samples as <f32>s
-fn C.AttachAudioMixedProcessor(processor AudioCallback)
+pub fn C.AttachAudioMixedProcessor(processor AudioCallback)
 
 // Detach audio stream processor from the entire audio pipeline
-fn C.DetachAudioMixedProcessor(processor AudioCallback)
+pub fn C.DetachAudioMixedProcessor(processor AudioCallback)
