@@ -663,7 +663,7 @@ struct C.AutomationEvent {
 	// Event frame
 	frame u32
 	// Event type (AutomationEventType)
-	// type u32
+	type u32
 	// Event parameters (if required)
 	params [4]int
 }
