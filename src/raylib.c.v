@@ -75,7 +75,7 @@ pub const raywhite = Color{245, 245, 245, 255}
 
 @[typedef]
 pub struct C.Vector2 {
-pub:
+pub mut:
 	// Vector x component
 	x f32
 	// Vector y component
@@ -87,7 +87,7 @@ pub type Vector2 = C.Vector2
 
 @[typedef]
 pub struct C.Vector3 {
-pub:
+pub mut:
 	// Vector x component
 	x f32
 	// Vector y component
@@ -101,7 +101,7 @@ pub type Vector3 = C.Vector3
 
 @[typedef]
 pub struct C.Vector4 {
-pub:
+pub mut:
 	// Vector x component
 	x f32
 	// Vector y component
@@ -120,7 +120,7 @@ pub type Quaternion = C.Vector4
 
 @[typedef]
 pub struct C.Matrix {
-pub:
+pub mut:
 	// Matrix first row
 	m0 f32
 	// Matrix first row
@@ -163,7 +163,7 @@ pub type Matrix = C.Matrix
 
 @[typedef]
 pub struct C.Color {
-pub:
+pub mut:
 	// Color red value
 	r u8
 	// Color green value
@@ -179,7 +179,7 @@ pub type Color = C.Color
 
 @[typedef]
 pub struct C.Rectangle {
-pub:
+pub mut:
 	// Rectangle top-left corner position x
 	x f32
 	// Rectangle top-left corner position y
@@ -195,7 +195,7 @@ pub type Rectangle = C.Rectangle
 
 @[typedef]
 pub struct C.Image {
-pub:
+pub mut:
 	// Image raw data
 	data voidptr
 	// Image base width
@@ -213,7 +213,7 @@ pub type Image = C.Image
 
 @[typedef]
 pub struct C.Texture {
-pub:
+pub mut:
 	// OpenGL texture id
 	id u32
 	// Texture base width
@@ -237,7 +237,7 @@ pub type TextureCubemap = C.Texture
 
 @[typedef]
 pub struct C.RenderTexture {
-pub:
+pub mut:
 	// OpenGL framebuffer object id
 	id u32
 	// Color buffer attachment texture
@@ -254,7 +254,7 @@ pub type RenderTexture2D = C.RenderTexture
 
 @[typedef]
 pub struct C.NPatchInfo {
-pub:
+pub mut:
 	// Texture source rectangle
 	source Rectangle
 	// Left border offset
@@ -274,7 +274,7 @@ pub type NPatchInfo = C.NPatchInfo
 
 @[typedef]
 pub struct C.GlyphInfo {
-pub:
+pub mut:
 	// Character value (Unicode)
 	value int
 	// Character offset X when drawing
@@ -292,7 +292,7 @@ pub type GlyphInfo = C.GlyphInfo
 
 @[typedef]
 pub struct C.Font {
-pub:
+pub mut:
 	// Base size (default chars height)
 	baseSize int
 	// Number of glyph characters
@@ -312,7 +312,7 @@ pub type Font = C.Font
 
 @[typedef]
 pub struct C.Camera3D {
-pub:
+pub mut:
 	// Camera position
 	position Vector3
 	// Camera target it looks-at
@@ -333,7 +333,7 @@ pub type Camera = C.Camera3D
 
 @[typedef]
 pub struct C.Camera2D {
-pub:
+pub mut:
 	// Camera offset (displacement from target)
 	offset Vector2
 	// Camera target (rotation and zoom origin)
@@ -349,7 +349,7 @@ pub type Camera2D = C.Camera2D
 
 @[typedef]
 pub struct C.Mesh {
-pub:
+pub mut:
 	// Number of vertices stored in arrays
 	vertexCount int
 	// Number of triangles stored (indexed or not)
@@ -390,7 +390,7 @@ pub type Mesh = C.Mesh
 
 @[typedef]
 pub struct C.Shader {
-pub:
+pub mut:
 	// Shader program id
 	id u32
 	// Shader locations array (RL_MAX_SHADER_LOCATIONS)
@@ -402,7 +402,7 @@ pub type Shader = C.Shader
 
 @[typedef]
 pub struct C.MaterialMap {
-pub:
+pub mut:
 	// Material map texture
 	texture Texture2D
 	// Material map color
@@ -416,7 +416,7 @@ pub type MaterialMap = C.MaterialMap
 
 @[typedef]
 pub struct C.Material {
-pub:
+pub mut:
 	// Material shader
 	shader Shader
 	// Material maps array (MAX_MATERIAL_MAPS)
@@ -430,7 +430,7 @@ pub type Material = C.Material
 
 @[typedef]
 pub struct C.Transform {
-pub:
+pub mut:
 	// Translation
 	translation Vector3
 	// Rotation
@@ -444,7 +444,7 @@ pub type Transform = C.Transform
 
 @[typedef]
 pub struct C.BoneInfo {
-pub:
+pub mut:
 	// Bone name
 	name &char
 	// Bone parent
@@ -456,7 +456,7 @@ pub type BoneInfo = C.BoneInfo
 
 @[typedef]
 pub struct C.Model {
-pub:
+pub mut:
 	// Local transform matrix
 	transform Matrix
 	// Number of meshes
@@ -482,7 +482,7 @@ pub type Model = C.Model
 
 @[typedef]
 pub struct C.ModelAnimation {
-pub:
+pub mut:
 	// Number of bones
 	boneCount int
 	// Number of animation frames
@@ -500,7 +500,7 @@ pub type ModelAnimation = C.ModelAnimation
 
 @[typedef]
 pub struct C.Ray {
-pub:
+pub mut:
 	// Ray position (origin)
 	position Vector3
 	// Ray direction
@@ -512,7 +512,7 @@ pub type Ray = C.Ray
 
 @[typedef]
 pub struct C.RayCollision {
-pub:
+pub mut:
 	// Did the ray hit something?
 	hit bool
 	// Distance to the nearest hit
@@ -528,7 +528,7 @@ pub type RayCollision = C.RayCollision
 
 @[typedef]
 pub struct C.BoundingBox {
-pub:
+pub mut:
 	// Minimum vertex box-corner
 	min Vector3
 	// Maximum vertex box-corner
@@ -540,7 +540,7 @@ pub type BoundingBox = C.BoundingBox
 
 @[typedef]
 pub struct C.Wave {
-pub:
+pub mut:
 	// Total number of frames (considering channels)
 	frameCount u32
 	// Frequency (samples per second)
@@ -574,7 +574,7 @@ pub type RAudioProcessor = C.rAudioProcessor
 
 @[typedef]
 pub struct C.AudioStream {
-pub:
+pub mut:
 	// Pointer to internal data used by the audio system
 	buffer &RAudioBuffer
 	// Pointer to internal data processor, useful for audio effects
@@ -592,7 +592,7 @@ pub type AudioStream = C.AudioStream
 
 @[typedef]
 pub struct C.Sound {
-pub:
+pub mut:
 	// Audio stream
 	stream AudioStream
 	// Total number of frames (considering channels)
@@ -604,7 +604,7 @@ pub type Sound = C.Sound
 
 @[typedef]
 pub struct C.Music {
-pub:
+pub mut:
 	// Audio stream
 	stream AudioStream
 	// Total number of frames (considering channels)
@@ -622,7 +622,7 @@ pub type Music = C.Music
 
 @[typedef]
 pub struct C.VrDeviceInfo {
-pub:
+pub mut:
 	// Horizontal resolution in pixels
 	hResolution int
 	// Vertical resolution in pixels
@@ -650,7 +650,7 @@ pub type VrDeviceInfo = C.VrDeviceInfo
 
 @[typedef]
 pub struct C.VrStereoConfig {
-pub:
+pub mut:
 	// VR projection matrices (per eye)
 	projection [2]Matrix
 	// VR view offset matrices (per eye)
@@ -674,7 +674,7 @@ pub type VrStereoConfig = C.VrStereoConfig
 
 @[typedef]
 pub struct C.FilePathList {
-pub:
+pub mut:
 	// Filepaths max entries
 	capacity u32
 	// Filepaths entries count
@@ -688,7 +688,7 @@ pub type FilePathList = C.FilePathList
 
 @[typedef]
 pub struct C.AutomationEvent {
-pub:
+pub mut:
 	// Event frame
 	frame u32
 	// Event type (AutomationEventType)
@@ -702,7 +702,7 @@ pub type AutomationEvent = C.AutomationEvent
 
 @[typedef]
 pub struct C.AutomationEventList {
-pub:
+pub mut:
 	// Events max entries (MAX_AUTOMATION_EVENTS)
 	capacity u32
 	// Events entries count
