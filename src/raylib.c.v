@@ -721,7 +721,7 @@ pub type AutomationEventList = C.AutomationEventList
 // System/Window config flags
 // NOTE: Every bit registers one state (use it with bit masks)
 // By default all flags are set to 0
-pub enum ConfigFlag {
+pub enum ConfigFlag as u32 {
 	// Set to try enabling V-Sync on GPU
 	flag_vsync_hint = 0x00000040
 	// Set to run program in fullscreen
