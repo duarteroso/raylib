@@ -691,7 +691,7 @@ pub struct C.AutomationEvent {
 pub:
 	// Event frame
 	frame u32
-	// Event pub type (AutomationEventType)
+	// Event type (AutomationEventType)
 	type u32
 	// Event parameters (if required)
 	params [4]int
@@ -1694,10 +1694,10 @@ pub fn C.GetShaderLocation(shader Shader, const_uniformName &char) int
 pub fn C.GetShaderLocationAttrib(shader Shader, const_attribName &char) int
 
 // Set shader uniform value
-pub fn C.SetShaderValue(shader Shader, locIndex int, const_value voidptr, uniformpub type, int)
+pub fn C.SetShaderValue(shader Shader, locIndex int, const_value voidptr, uniformType int)
 
 // Set shader uniform value vector
-pub fn C.SetShaderValueV(shader Shader, locIndex int, const_value voidptr, uniformpub type, int, count int)
+pub fn C.SetShaderValueV(shader Shader, locIndex int, const_value voidptr, uniformType int, count int)
 
 // Set shader uniform value (matrix 4x4)
 pub fn C.SetShaderValueMatrix(shader Shader, locIndex int, mat Matrix)
@@ -2329,8 +2329,8 @@ pub fn C.LoadImageSvg(const_fileNameOrString &char, width int, height int) Image
 // Load image sequence from file (frames appended to image.data)
 pub fn C.LoadImageAnim(const_fileName &char, frames &int) Image
 
-// Load image from memory buffer, filepub type refers to extension: i.e. '.png'
-pub fn C.LoadImageFromMemory(const_filepub type, &char, const_fileData &u8, dataSize int) Image
+// Load image from memory buffer, fileType refers to extension: i.e. '.png'
+pub fn C.LoadImageFromMemory(const_fileType &char, const_fileData &u8, dataSize int) Image
 
 // Load image from GPU texture data
 pub fn C.LoadImageFromTexture(texture Texture2D) Image
@@ -2348,7 +2348,7 @@ pub fn C.UnloadImage(image Image)
 pub fn C.ExportImage(image Image, const_fileName &char) bool
 
 // Export image to memory buffer
-pub fn C.ExportImageToMemory(image Image, const_filepub type, &char, fileSize &int) &u8
+pub fn C.ExportImageToMemory(image Image, const_fileType &char, fileSize &int) &u8
 
 // Export image as code file defining an array of bytes, returns true on success
 pub fn C.ExportImageAsCode(image Image, const_fileName &char) bool
@@ -2660,8 +2660,8 @@ pub fn C.LoadFontEx(const_fileName &char, fontSize int, codepoints &int, codepoi
 // Load font from Image (XNA style)
 pub fn C.LoadFontFromImage(image Image, key Color, firstChar int) Font
 
-// Load font from memory buffer, filepub type refers to extension: i.e. '.ttf'
-pub fn C.LoadFontFromMemory(const_filepub type, &char, const_fileData &u8, dataSize int, fontSize int, codepoints &int, codepointCount int) Font
+// Load font from memory buffer, fileType refers to extension: i.e. '.ttf'
+pub fn C.LoadFontFromMemory(const_fileType &char, const_fileData &u8, dataSize int, fontSize int, codepoints &int, codepointCount int) Font
 
 // Check if a font is ready
 pub fn C.IsFontReady(font Font) bool
@@ -2995,8 +2995,8 @@ pub fn C.IsMaterialReady(material Material) bool
 // Unload material from GPU memory (VRAM)
 pub fn C.UnloadMaterial(material Material)
 
-// Set texture for a material map pub type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)
-pub fn C.SetMaterialTexture(material &Materal, mappub type, int, texture Texture2D)
+// Set texture for a material map type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)
+pub fn C.SetMaterialTexture(material &Materal, mapType int, texture Texture2D)
 
 // Set material for a mesh
 pub fn C.SetModelMeshMaterial(model &Model, meshId int, materialId int)
@@ -3071,8 +3071,8 @@ pub fn C.GetMasterVolume() f32
 // Load wave data from file
 pub fn C.LoadWave(const_fileName &char) Wave
 
-// Load wave from memory buffer, filepub type refers to extension: i.e. '.wav'
-pub fn C.LoadWaveFromMemory(const_filepub type, &char, const_fileData &u8, dataSize int) Wave
+// Load wave from memory buffer, fileType refers to extension: i.e. '.wav'
+pub fn C.LoadWaveFromMemory(const_fileType, &char, const_fileData &u8, dataSize int) Wave
 
 // Checks if wave data is ready
 pub fn C.IsWaveReady(wave Wave) bool
@@ -3154,7 +3154,7 @@ pub fn C.UnloadWaveSamples(samples &f32)
 pub fn C.LoadMusicStream(const_fileName &char) Music
 
 // Load music stream from data
-pub fn C.LoadMusicStreamFromMemory(const_filepub type, &char, const_data &u8, dataSize int) Music
+pub fn C.LoadMusicStreamFromMemory(const_fileType &char, const_data &u8, dataSize int) Music
 
 // Checks if a music stream is ready
 pub fn C.IsMusicReady(music Music) bool
