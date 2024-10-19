@@ -2,8 +2,8 @@ module main
 
 import raylib
 
-const w = 800
-const h = 450
+const screen_width = 800
+const screen_heightt = 450
 
 enum GameScreen {
 	logo
@@ -14,7 +14,7 @@ enum GameScreen {
 
 fn main() {
 	t := 'raylib [core] example - basic screen manager'
-	C.InitWindow(w, h, t.str)
+	C.InitWindow(screen_width, screen_height, t.str)
 	C.SetTargetFPS(60)
 	//
 	mut state := GameScreen.logo
@@ -82,7 +82,7 @@ fn main() {
 }
 
 fn draw_rectangle(color raylib.Color) {
-	C.DrawRectangle(0, 0, w, h, color)
+	C.DrawRectangle(0, 0, screen_width, screen_height, color)
 }
 
 fn draw_title(text string, color raylib.Color) {

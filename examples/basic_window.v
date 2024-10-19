@@ -2,13 +2,12 @@ module main
 
 import raylib
 
-const w = 800
-const h = 450
+const screen_width = 800
+const screen_height = 450
 
 fn main() {
 	t := 'raylib [core] example - basic window'
-	C.InitWindow(w, h, t.str)
-	//
+	C.InitWindow(screen_width, screen_height, t.str)
 	C.SetTargetFPS(60)
 	//
 	for C.WindowShouldClose() == false {
