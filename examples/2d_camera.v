@@ -31,17 +31,18 @@ fn main() {
 		}
 	}
 	//
-	mut camera := raylib.Camera2D{}
-	camera.target = raylib.Vector2{
-		x: player.x + 20.0
-		y: player.y + 20.0
+	mut camera := raylib.Camera2D{
+		target:   raylib.Vector2{
+			x: player.x + 20.0
+			y: player.y + 20.0
+		}
+		offset:   raylib.Vector2{
+			x: f32(screen_width) / 2.0
+			y: f32(screen_height) / 2.0
+		}
+		rotation: 0.0
+		zoom:     1.0
 	}
-	camera.offset = raylib.Vector2{
-		x: f32(screen_width) / 2.0
-		y: f32(screen_height) / 2.0
-	}
-	camera.rotation = 0.0
-	camera.zoom = 1.0
 	//
 	for C.WindowShouldClose() == false {
 		//
@@ -118,4 +119,6 @@ fn main() {
 		}
 		C.EndDrawing()
 	}
+	//
+	C.CloseWindow()
 }
