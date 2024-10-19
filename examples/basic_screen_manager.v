@@ -2,9 +2,6 @@ module main
 
 import raylib
 
-const screen_width = 800
-const screen_heightt = 450
-
 enum GameScreen {
 	logo
 	title
@@ -13,6 +10,8 @@ enum GameScreen {
 }
 
 fn main() {
+	screen_width := 800
+	screen_height := 450
 	t := 'raylib [core] example - basic screen manager'
 	C.InitWindow(screen_width, screen_height, t.str)
 	C.SetTargetFPS(60)
@@ -54,24 +53,26 @@ fn main() {
 			//
 			match state {
 				.logo {
-					draw_title('LOGO SCREEN', raylib.lightgray)
-					draw_description('WAIT for 2 SECONDS...', raylib.gray)
+					C.DrawText('LOGO SCREEN'.str, 20, 20, 40, raylib.lightgray)
+					C.DrawText('WAIT for 2 SECONDS...'.str, 120, 220, 20, raylib.gray)
 				}
 				.title {
-					draw_rectangle(raylib.green)
-					draw_title('TITLE SCREEN', raylib.darkgreen)
-					draw_description('PRESS ENTER or TAP to JUMP to GAMEPLAY SCREEN',
-						raylib.darkgreen)
+					C.DrawRectangle(0, 0, screen_width, screen_height, raylib.green)
+					C.DrawText('TITLE SCREEN'.str, 20, 20, 40, raylib.darkgray)
+					C.DrawText('PRESS ENTER or TAP to JUMP to GAMEPLAY SCREEN'.str, 120,
+						220, 20, raylib.darkgreen)
 				}
 				.gameplay {
-					draw_rectangle(raylib.purple)
-					draw_title('GAMEPLAY SCREEN', raylib.maroon)
-					draw_description('PRESS ENTER or TAP to JUMP to ENDING SCREEN', raylib.maroon)
+					C.DrawRectangle(0, 0, screen_width, screen_height, raylib.purple)
+					C.DrawText('GAMEPLAY SCREEN'.str, 20, 20, 40, raylib.maroon)
+					C.DrawText('PRESS ENTER or TAP to JUMP to ENDING SCREEN'.str, 120,
+						220, 20, raylib.maroon)
 				}
 				.ending {
-					draw_rectangle(raylib.blue)
-					draw_title('ENDING SCREEN', raylib.darkblue)
-					draw_description('PRESS ENTER or TAP to JUMP to TITLE SCREEN', raylib.darkblue)
+					C.DrawRectangle(0, 0, screen_width, screen_height, raylib.blue)
+					C.DrawText('ENDING SCREEN'.str, 20, 20, 40, raylib.darkblue)
+					C.DrawText('PRESS ENTER or TAP to JUMP to TITLE SCREEN'.str, 120,
+						220, 20, raylib.darkblue)
 				}
 			}
 		}
@@ -79,16 +80,4 @@ fn main() {
 	}
 	//
 	C.CloseWindow()
-}
-
-fn draw_rectangle(color raylib.Color) {
-	C.DrawRectangle(0, 0, screen_width, screen_height, color)
-}
-
-fn draw_title(text string, color raylib.Color) {
-	C.DrawText(text.str, 20, 20, 40, color)
-}
-
-fn draw_description(text string, color raylib.Color) {
-	C.DrawText(text.str, 120, 220, 20, color)
 }
