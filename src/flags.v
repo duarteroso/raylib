@@ -12,3 +12,4 @@ $if macos {
 }
 
 #include "raylib.h"
+#include "raymath.h" 
