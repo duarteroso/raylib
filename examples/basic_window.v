@@ -11,9 +11,7 @@ fn main() {
 	//
 	for C.WindowShouldClose() == false {
 		C.BeginDrawing()
-		{
-			C.ClearBackground(raylib.raywhite)
-		}
+		C.ClearBackground(raylib.raywhite)
 		C.EndDrawing()
 	}
 	//

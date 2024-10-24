@@ -8,38 +8,22 @@ fn main() {
 	t := 'raylib [core] example - 3d camera free'
 	C.InitWindow(screen_width, screen_height, t.str)
 	C.SetTargetFPS(60)
+	C.DisableCursor()
 	//
+	pos := raylib.Vector3{0.0, 0.0, 0.0}
+	size := raylib.Vector3{2.0, 2.0, 2.0}
 	mut camera := &raylib.Camera3D{
-		position:   raylib.Vector3{
-			x: 10.0
-			y: 10.0
-			z: 10.0
-		}
-		target:     raylib.Vector3{
-			x: 0.0
-			y: 0.0
-			z: 0.0
-		}
-		up:         raylib.Vector3{
-			x: 0.0
-			y: 1.0
-			z: 0.0
-		}
+		position:   raylib.Vector3{10.0, 10.0, 10.0}
+		target:     raylib.Vector3{0.0, 0.0, 0.0}
+		up:         raylib.Vector3{0.0, 1.0, 0.0}
 		fovy:       45.0
 		projection: int(raylib.CameraProjection.camera_perspective)
 	}
 	//
-	cube_pos := raylib.Vector3{
-		x: 0.0
-		y: 0.0
-		z: 0.0
-	}
-	//
-	C.DisableCursor()
-	//
 	for C.WindowShouldClose() == false {
-		C.UpdateCamera(camera, int(raylib.CameraMode.camera_free))
 		//
+		// Update
+		C.UpdateCamera(camera, int(raylib.CameraMode.camera_free))
 		if C.IsKeyDown(int(raylib.KeyboardKey.key_z)) {
 			camera.target = raylib.Vector3{
 				x: 0.0
@@ -48,14 +32,15 @@ fn main() {
 			}
 		}
 		//
+		// Drawing
 		C.BeginDrawing()
 		{
 			C.ClearBackground(raylib.raywhite)
-			//
 			C.BeginMode3D(camera)
 			{
-				C.DrawCube(cube_pos, 2.0, 2.0, 2.0, raylib.red)
-				C.DrawCubeWires(cube_pos, 2.0, 2.0, 2.0, raylib.maroon)
+				C.DrawCubeV(pos, size, raylib.red)
+				C.DrawCubeWiresV(pos, size, raylib.maroon)
+				C.DrawGrid(10, 1.0)
 			}
 			C.EndMode3D()
 			//
