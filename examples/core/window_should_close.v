@@ -16,7 +16,7 @@ fn main() {
 	for exit_window == false {
 		//
 		// Update
-		if C.WindowShouldClose() || C.IsKeyPressed(int(raylib.KeyboardKey.key_escape)) {
+		if C.WindowShouldClose() {
 			exit_requested = true
 		}
 		//
