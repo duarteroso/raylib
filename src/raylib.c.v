@@ -1063,7 +1063,7 @@ pub enum GamepadButton {
 	// Unknown button, just for error checking
 	gamepad_button_unknown = 0
 	// Gamepad left DPAD up button
-	gamepad_button_left_face_u
+	gamepad_button_left_face_up
 	// Gamepad left DPAD right button	
 	gamepad_button_left_face_right
 	// Gamepad left DPAD down button	
