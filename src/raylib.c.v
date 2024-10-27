@@ -1063,7 +1063,7 @@ pub enum GamepadButton {
 	// Unknown button, just for error checking
 	gamepad_button_unknown = 0
 	// Gamepad left DPAD up button
-	gamepad_button_left_face_u
+	gamepad_button_left_face_up
 	// Gamepad left DPAD right button	
 	gamepad_button_left_face_right
 	// Gamepad left DPAD down button	
@@ -1711,13 +1711,13 @@ pub fn C.UnloadShader(shader Shader)
 // Screen-space-related functions
 
 // Get a ray trace from mouse position
-pub fn C.GetMouseRay(mousePosition Vector2, camera Camera, camera)
+pub fn C.GetMouseRay(mousePosition Vector2, camera Camera) Ray
 
 // Get camera transform matrix (view matrix)
-pub fn C.GetCameraMatrix(camera Camera)
+pub fn C.GetCameraMatrix(camera Camera) Matrix
 
 // Get camera 2d transform matrix
-pub fn C.GetCameraMatrix2D(camera Camera2D)
+pub fn C.GetCameraMatrix2D(camera Camera2D) Matrix
 
 // Get the screen space position for a 3d world space position
 pub fn C.GetWorldToScreen(position Vector3, camera Camera) Vector2
