@@ -108,26 +108,26 @@ fn C.Vector2Transform(v Vector2, mat Matrix) Vector2
 fn C.Vector2Lerp(v1 Vector2, v2 Vector2, amount f32) Vector2
 
 // Calculate reflected vector to normal
-fn C.Vector2Reflect(v Vector2, Vector2 normal) Vector2
+fn C.Vector2Reflect(v Vector2, normal Vector2) Vector2
 
 // Rotate vector by angle
 fn C.Vector2Rotate(v Vector2, angle f32) Vector2
 
 // Move Vector towards target
-fn C.Vector2MoveTowards(v Vector2, Vector2 target, f32 maxDistance) Vector2
+fn C.Vector2MoveTowards(v Vector2, target Vector2, maxDistance f32) Vector2
 
 // Invert the given vector
 fn C.Vector2Invert(v Vector2) Vector2
 
 // Clamp the components of the vector between
 // min and max values specified by the given vectors
-fn C.Vector2Clamp(v Vector2, Vector2 min, Vector2 max) Vector2
+fn C.Vector2Clamp(v Vector2, min Vector2, max Vector2) Vector2
 
 // Clamp the magnitude of the vector between two min and max values
 fn C.Vector2ClampValue(v Vector2, min f32, max f32) Vector2
 
 // Check whether two given vectors are almost equal
-fn C.Vector2Equals(Vector2 p, Vector2 q) int
+fn C.Vector2Equals(p Vector2, q Vector2) int
 
 //----------------------------------------------------------------------------------
 // Module Functions Definition - Vector3 math
@@ -402,4 +402,4 @@ fn C.QuaternionToEuler(q Quaternion) Vector3
 fn C.QuaternionTransform(q Quaternion, mat Matrix) Quaternion
 
 // Check whether two given quaternions are almost equal
-fn C.QuaternionEquals(Quaternion p, q Quaternion) int
+fn C.QuaternionEquals(p Quaternion, q Quaternion) int
